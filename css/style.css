@@ -1,0 +1,122 @@
+/* ---------------------------------------------------- BODY --- */
+
+body {
+    font-family: "Asap", sans-serif;
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+p {
+    font-size: 17px;
+}
+
+button {
+    font-size: 17px;
+}
+
+input {
+    font-size: 19px;
+}
+
+/* --------------------------------------------------- HEADER --- */
+
+#header {
+    background-color: #FF8A65;
+    height: 38vh;
+}
+
+#headerBackGround {
+    width: 100%;
+    height: 97%;
+    object-fit: cover;
+}
+
+
+/* --------------------------------------------------- MAIN --- */
+
+#main {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20vh;
+}
+
+#mainCenteredItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    margin-bottom: 7vh;
+    font-weight: 200;
+}
+
+        #usernameLabel {
+            padding: 0 2vh;
+            font-size: 17px;
+        }
+
+        #usernameInput {
+            max-width: 500px;
+            width: 60vw;
+            padding: 0.7vh 0;
+            padding-left: 20px;
+            border: 1px solid black;
+            border-radius: 50px;
+            margin-bottom: 2vh;
+            margin-top: 0.5vh;
+        }
+
+        #passwordLabel {
+            padding: 0 2vh;
+            font-size: 17px;
+        }
+
+        #passwordInput {
+            max-width: 500px;
+            width: 60vw;
+            padding: 0.7vh 0;
+            padding-left: 20px;
+            border: 1px solid black;
+            border-radius: 50px;
+            margin-bottom: 5vh;
+            margin-top: 0.5vh;
+        }
+
+#connexionButton {
+    padding: 1vh 30px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background-color: #FF8A65;
+}
+
+#connexionButton:hover {
+    background-color: #fd9778;
+}
+
+#connexionButton:active {
+    background-color: #ffb69f;
+}
+
+/* ----------------------------------------------------- FOOTER --- */
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    height: 6vh;  
+}
+
+.footerText {
+    padding: 0 4vw;
+    margin-bottom: 2vh;
+}
