@@ -1,0 +1,17 @@
+header {
+  background-color: #8881d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15rem;
+}
+
+img {
+  width: 5rem;
+  border-radius: 50%;
+}
+
+#signout {
+  width: 2rem;
+  height: auto;
+}
