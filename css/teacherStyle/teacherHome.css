@@ -15,6 +15,7 @@ header {
   width: 100vw;
   position: sticky;
 }
+
 .teacherprofil {
   display: flex;
   align-items: center;
@@ -26,6 +27,7 @@ header {
   margin-right: 6px;
   margin-left: 15px;
 }
+
 h1 {
   font-size: 15px;
   color: white;
