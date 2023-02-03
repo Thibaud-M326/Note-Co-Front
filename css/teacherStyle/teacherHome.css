@@ -7,7 +7,7 @@ body {
   background-color: #f6f7ff;
 }
 
-/* HEADER */
+/*..................................... HEADER */
 header {
   background-color: #8881d0;
   display: flex;
@@ -58,7 +58,7 @@ a {
   margin-right: 15px;
 }
 
-/* CONTAINER */
+/* ...........................CONTAINER */
 .container {
   text-align: center;
 }
@@ -67,9 +67,6 @@ h2 {
   font-size: 20px;
 }
 
-/* #imgMenu {
-  width: 15px;
-} */
 #quarters {
   background-color: #ff8a65;
   border: none;
@@ -85,10 +82,6 @@ h2 {
   /* appearance: none; */
   font-family: "Asap", sans-serif;
 }
-
-/* select :after {
-  color: black;
-} */
 
 #btnAdd {
   background-color: #5bbd7c;
@@ -106,7 +99,7 @@ h2 {
 }
 
 .tableStudents {
-  height: 40vh;
+  height: 50vh;
   overflow: scroll;
 }
 
@@ -122,6 +115,7 @@ th {
 td {
   text-align: left;
   padding: 3px;
+  margin-left: 10px;
 }
 
 #numberStudents {
@@ -144,7 +138,7 @@ h4 {
   margin-left: 20px;
 }
 
-/* FOOTER */
+/*.................................. FOOTER */
 
 footer {
   background-color: #8881d0;
@@ -153,7 +147,7 @@ footer {
   align-items: center;
   height: 8vh;
   width: 100vw;
-  margin: none;
+
   position: fixed;
   bottom: 0;
 }
@@ -181,11 +175,6 @@ h6 {
   }
   .container {
     width: 25vw;
-  }
-
-  h3 {
-    font-size: 14px;
-  }
-  .block {
+    margin-left: 15px;
   }
 }
