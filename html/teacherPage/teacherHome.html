@@ -8,25 +8,71 @@
     <link rel="stylesheet" href="../../css/teacherStyle/teacherHome.css" />
   </head>
   <body>
-    <section class="toppage">
-      <header>
-        <div class="headerelements">
-          <div id="image">
-            <img src="../../assets/img/avatar.png" alt="profil" />
-          </div>
-          <div id="name" class="name">
-            <h1>Marie Cury</h1>
-          </div>
-          <div id="graphlink" class="graphlink">
-            <a href="">Graphique</a>
-          </div>
+    <header class="header">
+      <nav id="nav">
+        <div class="teacherprofil">
+          <img id="imgProfil" src="../../assets/img/avatar.png" alt="profil" />
+          <h1>Professeure </br>Marie Cury</h1>
+        </div>
+        <div class="secondPart">
+          <a id="graph" href="">Graphique</a>
           <input
             id="signout"
             type="image"
             src="../../assets/img/sign-out.png"
           />
         </div>
-      </header>
-    </section>
+      </nav>
+    </header>
+
+    <div class="container">
+        <div id="subject">
+            <h2>Anglais</h2>
+        </div>
+        <div id="btnQuarters" class="btnQuarters">
+         <!-- <img id="imgMenu" src="../../assets/img/menu.png"> -->
+         <select type="select" id="quarters" >
+         <option value="quarter1">Trimestre 1</option>
+         <option value="quarter2">Trimestre 2</option>
+         <option value="quarter3">Trimestre 3</option>
+          </select>
+        </div>
+    
+        <div class="btnSchoolWork">
+          <button id="btnAdd">Ajouter un devoir</button>
+          <button id="btnUpdate">Modifier un devoir</button>
+         </div>
+        <div id="className">
+            <h3>Classe 4c</h3>
+         </div>
+         <table id="table">
+            <tr>
+                <th id="numberStudents">élèves</th>
+                <th>Moyenne</th>
+            </tr>
+            <tr>
+                <td>Giraud</td>
+                <td>Pierre</td>
+              </tr>
+              <tr>
+                <td>Joly</td>
+                <td>Pauline</td>
+              </tr>
+         </table>
+         <!-- <div id="mediumClass">
+            <h4>Moyenne de la classe</h4>
+         </div> -->
+    </div>
+
+    <footer>
+      <div class="footerElements">
+        <div id="mentions">
+          <p>Mentions Légales</p>
+        </div>
+        <div id="date">
+          <p>@2023</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
