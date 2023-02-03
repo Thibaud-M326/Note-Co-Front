@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@100&family=Cardo&family=Crimson+Text&family=IBM+Plex+Sans+Condensed&display=swap");
+
+/* ---------------------------------------------------- BODY --- */
+
+body {
+  margin: 0;
+  position: relative;
+  font-family: "Asap", sans-serif;      
+  background-color: #f6f7ff;
+}
+
+h1 {
+  font-size: 15px;
+  color: white;
+  margin-left: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+p {
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 14px;
+  color: white;
+}
+
+/* --------------------------------------------------- HEADER --- */
+
+.header {
+  background-color: #8881d0;
+  display: flex;
+  height: 7rem;
+  width: auto;
+  position: sticky;
+}
+
+#nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.teacherprofil {
+  display: flex;
+  align-items: center;
+}
+
+#imgProfil {
+  width: 3rem;
+  border-radius: 50%;
+  margin-right: 6px;
+  margin-left: 15px;
+}
+
+.secondPart {
+  display: flex;
+  align-items: center;
+}
+
+#signout {
+  width: 25px;
+  height: auto;
+  margin-left: 10px;
+  margin-right: 15px;
+}
+
+
+/* --------------------------------------------------- MAIN --- */
+
+
+
+
+
+/* --------------------------------------------------- FOOTER --- */
+
+footer {
+  background-color: #8881d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5srem;
+  width: 100%;
+  margin: none;
+  position: fixed;
+  bottom: 0;
+}
+
+.footerElements {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

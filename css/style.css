@@ -1,6 +1,6 @@
-/* ---------------------------------------------------- BODY --- */
-
 @import url("https://fonts.googleapis.com/css2?family=Asap:wght@100&family=Cardo&family=Crimson+Text&family=IBM+Plex+Sans+Condensed&display=swap%22");
+
+/* ---------------------------------------------------- BODY --- */
 
 body {
     font-family: "Asap", sans-serif;
@@ -36,6 +36,8 @@ button {
     font-size: 17px;
     font-family: "Asap", sans-serif;
 }
+
+
 /* --------------------------------------------------- HEADER --- */
 
 #header {
