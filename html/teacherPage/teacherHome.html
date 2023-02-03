@@ -13,7 +13,7 @@
       <nav id="headerNav">
         <div id="teacherProfil">
           <img id="imgProfil" src="../../assets/img/avatar.png" alt="profil"/>
-          <h1>Mr Prof</h1>
+          <h1 id="teacherName">Mr Prof</h1>
         </div>
         <div id="secondPart">
           <a id="graph" href="">Graphique</a>
@@ -21,6 +21,49 @@
         </div>
       </nav>
     </header>
+
+
+    <div id="allMain">
+      <div id="divTopInfo">
+        <div id="divSubject">
+          <h1 id="subject">Anglais</h1>
+        </div>
+
+        <div id="divSelects">
+          <select name="quarters" id="quarters">
+            <option value="quarter1">Trimestre 1</option>
+            <option value="quarter2">Trimestre 2</option>
+            <option value="quarter3">Trimestre 3</option>
+          </select>
+          
+          <select name="rating" id="rating">
+            <option value="date1">Oral - 2013/04/23</option>
+            <option value="date2">Ecrit - 2013/04/25</option>
+            <option value="date3">Oral - 2013/05/8</option>
+          </select>
+        </div>
+      </div>
+    
+      <div id="bottomInfo">
+        <div id="containerTabNotes">
+          <div id="tabNotes">
+          </div>
+        </div>
+
+        <div id="containerBottom">
+          <div id="divButton">
+            <button id="buttonModify">Modifier</button>
+            <button id="buttonAddRating">Ajouter un devoir</button>
+          </div>
+
+          <div id="divAverage">
+            <p id="classAverage">Moyenne de classe</p>
+            <p id="classAverageNote">12</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 
 
@@ -35,4 +78,5 @@
       </div>
     </footer>
   </body>
+
 </html>
