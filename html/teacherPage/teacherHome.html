@@ -4,15 +4,120 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Accueil</title>
+    <link rel="stylesheet" href="../../css/teacherStyle/teacherHome.css" />
   </head>
   <body>
-    <section class="toppage">
-      <header id="header">
-        <div>
-          <img src="" alt="" />
+    <header class="header">
+      <nav id="nav">
+        <div class="teacherprofil">
+          <img id="imgProfil" src="../../assets/img/avatar.png" alt="profil" />
+          <h1>Professeure </br>Marie Cury</h1>
         </div>
-      </header>
-    </section>
+        <div class="secondPart">
+          <a id="graph" href="">Graphique</a>
+          <input
+            id="signout"
+            type="image"
+            src="../../assets/img/sign-out.png"
+          />
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+        <div class="block">
+        <div id="subject">
+            <h2>Anglais</h2>
+        </div>
+        <div id="btnQuarters" class="btnQuarters">
+            <!-- <span>  <img id="imgMenu" src="../../assets/img/menu.png"> </span> -->
+         <select type="select" id="quarters" >
+         <option value="quarter1">
+            Trimestre 1</option>
+         <option value="quarter2">Trimestre 2</option>
+         <option value="quarter3">Trimestre 3</option>
+          </select>
+        </div>
+    
+        <div class="btnSchoolWork">
+          <button id="btnAdd" >Ajouter/Modifier</button>
+         </div>
+        <div id="className">
+            <h3>Classe 4c</h3>
+         </div>
+        </div>
+         <div class="tableStudents">
+         <table id="table">
+            <tr>
+                <th id="numberStudents">élèves</th>
+                <th>Moyenne</th>
+            </tr>
+            <tr>
+                <td>Giraud</td>
+                <td>Pierre</td>
+              </tr>
+              <tr>
+                <td>Joly</td>
+                <td>Pauline</td>
+              </tr>
+              <tr>
+                <td>Giraud</td>
+                <td>Pierre</td>
+              </tr>
+              <tr>
+                <td>Joly</td>
+                <td>Pauline</td>
+              </tr>
+              <tr>
+                <td>Giraud</td>
+                <td>Pierre</td>
+              </tr>
+              <tr>
+                <td>Joly</td>
+                <td>Pauline</td>
+              </tr>
+              <tr>
+                <td>Giraud</td>
+                <td>Pierre</td>
+              </tr>
+              <tr>
+                <td>Joly</td>
+                <td>Pauline</td>
+              </tr>
+              <tr>
+                <td>Giraud</td>
+                <td>Pierre</td>
+              </tr>
+              <tr>
+                <td>Joly</td>
+                <td>Pauline</td>
+              </tr>
+              <tr>
+                <td>Giraud</td>
+                <td>Pierre</td>
+              </tr>
+              <tr>
+                <td>Joly</td>
+                <td>Pauline</td>
+              </tr>
+         </table>
+        </div>
+         <div id="mediumClass" class="mediumClass">
+            <h4>Moyenne de la classe</h4>
+            <p id="mediumResult"> X </p>
+         </div>
+    
+
+    <footer>
+      <div class="footerElements">
+        <div id="mentions">
+          <h6>Mentions Légales</h6>
+        </div>
+        <div id="date">
+          <h6>@2023</h6>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
