@@ -3,16 +3,27 @@
 /* ---------------------------------------------------- BODY --- */
 
 body {
-  margin: 0;
   position: relative;
-  font-family: "Asap", sans-serif;      
-  background-color: #f6f7ff;
+  font-family: "Asap", sans-serif !important;
+  background-color: #f6f7ff !important;
+  margin: 0 !important;
+  width: 100vw;
+  height: 100vh;
 }
 
 h1 {
-  font-size: 15px;
-  color: white;
-  margin-left: 8px;
+  font-size: 15px !important;
+  color: white !important;
+  margin-left: 8px !important;
+}
+
+h2 {
+  font-size: 15px !important;
+  padding-top: 0px !important;
+}
+
+p {
+  font-size: 10px !important;
 }
 
 a {
@@ -22,11 +33,11 @@ a {
   font-size: 15px;
 }
 
-p {
-  margin-left: 15px;
-  margin-right: 15px;
-  font-size: 14px;
-  color: white;
+h6 {
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+  font-size: 14px !important;
+  color: white !important;
 }
 
 /* --------------------------------------------------- HEADER --- */
@@ -34,8 +45,7 @@ p {
 .header {
   background-color: #8881d0;
   display: flex;
-  height: 7rem;
-  width: auto;
+  height: 12vh;
   position: sticky;
 }
 
@@ -44,9 +54,10 @@ p {
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
 }
 
-.teacherprofil {
+.studentprofil {
   display: flex;
   align-items: center;
 }
@@ -70,13 +81,101 @@ p {
   margin-right: 15px;
 }
 
+#graph {
+  cursor: pointer;
+  color: white;
+  font-size: 13px;
+  background-color: #8881d0;
+  border: none;
+  margin-right: 8px;
+}
 
 /* --------------------------------------------------- MAIN --- */
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2vh;
+}
 
+#summaryScore {
+  flex-direction: row;
+  text-align: center;
+  display: flex;
+  margin-top: 15px;
+}
 
+#numberOfScore {
+  background-color: #9575cd;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 70px;
+  width: 25vw;
+  margin-right: 10px;
+  padding-top: 12px;
+}
 
+#highestScore {
+  background-color: #ff8a65;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  height: 70px;
+  width: 25vw;
+  margin-right: 10px;
+  padding-top: 12px;
+}
 
+#lowestScore {
+  background-color: #6c6ace;
+  color: white;
+  border-radius: 8px;
+  height: 70px;
+  width: 25vw;
+  padding-top: 12px;
+}
 
+select {
+  display: flex;
+  background-color: #ff8a65;
+  border: none;
+  border-radius: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: white;
+  font-size: 13px !important;
+  margin-bottom: 15px;
+  cursor: pointer;
+  /* appearance: none; */
+  font-family: "Asap", sans-serif;
+}
+
+#btnQuarters {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 2vh;
+}
+
+#table {
+  display: flex;
+  height: 50vh;
+  width: 80vw;
+  height: 50vh;
+  margin-bottom: 3vh;
+  border: 1px solid black;
+}
+
+#graphic {
+  display: flex;
+  height: 50vh;
+  width: 80vw;
+  height: 50vh;
+  border: 1px solid black;
+}
 /* --------------------------------------------------- FOOTER --- */
 
 footer {
@@ -84,15 +183,129 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5srem;
-  width: 100%;
+  height: 8vh;
+  width: 100vw;
   margin: none;
-  position: fixed;
   bottom: 0;
+  position: fixed;
 }
 
 .footerElements {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+/* ..................................................MODAL */
+.modal-body {
+  display: flex;
+}
+
+#mediumClassModal {
+  background-color: #9575cd;
+  color: white;
+  height: 70px;
+  width: 25vw;
+  margin-right: 15px;
+  padding-top: 12px;
+  text-align: center;
+}
+#mediumScoreModal {
+  background-color: white;
+  color: black;
+  border: 1px solid #9575cd;
+  height: 27px;
+  padding-top: 4px;
+}
+#mediumMoreModal {
+  background-color: #ff8a65;
+  color: white;
+  margin-bottom: 10px;
+  height: 70px;
+  width: 25vw;
+  margin-right: 15px;
+  padding-top: 12px;
+  text-align: center;
+}
+
+#MoreScoreModal {
+  background-color: white;
+  color: black;
+  border: 1px solid #ff8a65;
+  height: 27px;
+  padding-top: 4px;
+}
+#lessClassModal {
+  background-color: #6c6ace;
+  color: white;
+  margin-bottom: 10px;
+  height: 70px;
+  width: 25vw;
+  margin-right: 15px;
+  padding-top: 12px;
+  text-align: center;
+}
+#lessScoreModal {
+  background-color: white;
+  color: black;
+  border: 1px solid #6c6ace;
+  height: 27px;
+  padding-top: 4px;
+}
+
+@media screen and (min-width: 769px) {
+  /* ....................................BODY */
+
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  h1 {
+    font-size: 20px !important;
+    margin-left: 10px;
+  }
+
+  /*................................... HEADER */
+
+  header {
+    width: 100vw;
+  }
+
+  #imgProfil {
+    width: 5vw;
+    border-radius: 50%;
+    margin-right: 6px;
+    margin-left: 20px;
+  }
+  #graph {
+    font-size: 20px;
+    margin-right: 8vw;
+  }
+  #signpout {
+    width: 6vw;
+  }
+  /*..................................... MAIN */
+  #container {
+    display: block;
+    margin-left: 3vw;
+  }
+  #summaryScore {
+    width: 40vw;
+  }
+  #btnQuarters {
+    width: 40vw;
+  }
+  #table {
+    width: 40vw;
+  }
+  /*..................................... FOOTER */
+  footer {
+    height: 10vh;
+    position: fixed;
+  }
+
+  .footerElements {
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
 }
