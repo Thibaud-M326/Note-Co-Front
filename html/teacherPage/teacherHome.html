@@ -8,71 +8,103 @@
     <link rel="stylesheet" href="../../css/teacherStyle/teacherHome.css" />
   </head>
   <body>
-    <header class="header">
-      <nav id="nav">
-        <div class="teacherprofil">
-          <img id="imgProfil" src="../../assets/img/avatar.png" alt="profil" />
-          <h1>Professeure </br>Marie Cury</h1>
+
+    <header id="header">
+      <nav id="headerNav">
+        <div id="teacherProfil">
+          <img id="imgProfil" src="../../assets/img/avatar.png" alt="profil"/>
+          <h1 id="teacherName">Mr Prof</h1>
         </div>
-        <div class="secondPart">
+        <div id="secondPart">
           <a id="graph" href="">Graphique</a>
-          <input
-            id="signout"
-            type="image"
-            src="../../assets/img/sign-out.png"
-          />
+          <input id="signout" type="image" src="../../assets/img/sign-out.png"/>
         </div>
       </nav>
     </header>
 
-    <div class="container">
-        <div id="subject">
-            <h2>Anglais</h2>
+
+    <div id="allMain">
+      <div id="divTopInfo">
+        <div id="divSubject">
+          <h1 id="subject">Anglais</h1>
         </div>
-        <div id="btnQuarters" class="btnQuarters">
-         <!-- <img id="imgMenu" src="../../assets/img/menu.png"> -->
-         <select type="select" id="quarters" >
-         <option value="quarter1">Trimestre 1</option>
-         <option value="quarter2">Trimestre 2</option>
-         <option value="quarter3">Trimestre 3</option>
+
+        <div id="divSelects">
+          <select name="quarters" id="quarters">
+            <option value="quarter1">Trimestre 1</option>
+            <option value="quarter2">Trimestre 2</option>
+            <option value="quarter3">Trimestre 3</option>
+          </select>
+          
+          <select name="rating" id="rating">
+            <option value="date1">Oral - 2013/04/23</option>
+            <option value="date2">Ecrit - 2013/04/25</option>
+            <option value="date3">Oral - 2013/05/8</option>
           </select>
         </div>
+      </div>
     
-        <div class="btnSchoolWork">
-          <button id="btnAdd">Ajouter un devoir</button>
-          <button id="btnUpdate">Modifier un devoir</button>
-         </div>
-        <div id="className">
-            <h3>Classe 4c</h3>
-         </div>
-         <table id="table">
-            <tr>
-                <th id="numberStudents">élèves</th>
-                <th>Moyenne</th>
-            </tr>
-            <tr>
-                <td>Giraud</td>
-                <td>Pierre</td>
-              </tr>
-              <tr>
-                <td>Joly</td>
-                <td>Pauline</td>
-              </tr>
-         </table>
-         <!-- <div id="mediumClass">
-            <h4>Moyenne de la classe</h4>
-         </div> -->
+      <div id="bottomInfo">
+        <div id="containerTabNotes">
+          <div id="tabNotes">
+            <table id="tableDynamic">
+              <thead>
+                <tr>
+                  30 eleves
+                </tr>
+                <tr>
+                  Notes
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jean Mi</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Jean Mi</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Jean Mi</td>
+                  <td>20</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="divAverage">
+          <p id="classAverage">Moyenne de classe</p>
+          <p id="classAverageNote">12</p>
+        </div>
+
+        <div id="containerBottom">
+          <div id="divButton">
+            <button id="buttonModify">Modifier</button>
+            <button id="buttonAddRating">Ajouter un devoir</button>
+          </div>
+
+
+        </div>
+      </div>
     </div>
 
-    <footer>
-      <div class="footerElements">
+
+
+
+    <footer id="footer">
+      <div id="footerElements">
         <div id="mentions">
-          <p>Mentions Légales</p>
+          <h6 class="titleH6">Mentions Légales</h6>
         </div>
         <div id="date">
-          <p>@2023</p>
+          <h6 class="titleH6">@2023</h6>
         </div>
       </div>
     </footer>
   </body>
+
+  <script src="../../js/teacher/teacher.js"></script>
+
 </html>

@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap:wght@100&family=Cardo&family=Crimson+Text&family=IBM+Plex+Sans+Condensed&display=swap");
 
+/*------------------------------------------------BODY -------- */
+
 body {
   margin: 0;
   position: relative;
@@ -7,14 +9,32 @@ body {
   background-color: #f6f7ff;
 }
 
-header {
+a {
+  text-decoration: none;
+  color: white;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+
+/*------------------------------------------------HEADER --------*/
+
+#header {
   background-color: #8881d0;
   display: flex;
-  height: 7rem;
-  width: auto;
+  height: 5rem;
+  width: 100vw;
   position: sticky;
 }
-.teacherprofil {
+
+#headerNav {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#teacherProfil {
   display: flex;
   align-items: center;
 }
@@ -25,29 +45,16 @@ header {
   margin-right: 6px;
   margin-left: 15px;
 }
-h1 {
-  font-size: 15px;
+
+#teacherName {
+  font-size: 32px;
   color: white;
   margin-left: 8px;
 }
 
-nav {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.secondPart {
+#secondPart {
   display: flex;
   align-items: center;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-  margin-right: 10px;
-  font-size: 15px;
 }
 
 #signout {
@@ -57,99 +64,160 @@ a {
   margin-right: 15px;
 }
 
-.container {
-  text-align: center;
+
+/* ---------------------------------------------- MAIN -------------*/
+
+#allMain {
+
 }
 
-/* #imgMenu {
-  width: 15px;
-} */
-#quarters {
-  background-color: #ff8a65;
-  border: none;
-  border-radius: 20px;
-  /* padding-left: 40px; */
-  padding-right: 5px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  color: white;
-  font-size: 13px;
-  margin-bottom: 15px;
-  cursor: pointer;
-  /* appearance: none; */
+    #divTopInfo {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #subject {
+      font-size: 42px;
+      
+    }
+
+    #divSelects {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #quarters {
+      margin: 3vh;
+      margin-bottom: 0vh;
+      font-size: 17px;
+      padding: 1.3vh 70px;
+      background-color: #bd5b5b;
+      color: white;
+      border: none;
+      border-radius: 50px;
+    }
+
+    #rating {
+      margin: 2vh;
+      margin-top: 1vh;
+      font-size: 17px;
+      padding: 1.3vh 45px;
+      background-color: #5BBD7C;
+      color: white;
+      border: none;
+      border-radius: 50px;
+    }
+
+
+#bottomInfo {
+  display: flex;
+  flex-direction: column;
+
 }
 
-/* select :after {
-  color: black;
-} */
-
-#btnAdd {
-  background-color: #5bbd7c;
-  border: none;
-  border-radius: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  color: white;
-  font-size: 13px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-#btnUpdate {
-  background-color: #5bbd7c;
-  border: none;
-  border-radius: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  color: white;
-  font-size: 13px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-table {
-  margin-left: 15px;
-  margin-right: 15px;
-  border-collapse: collapse;
-}
-th {
-  border: 1px solid black;
-  padding: 5px;
-}
-td {
-  text-align: left;
-}
-
-#numberStudents {
-  width: 15rem;
-  text-align: center;
-}
-
-footer {
-  background-color: #8881d0;
+#containerTabNotes {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 5srem;
-  width: 100%;
-  margin: none;
-  position: fixed;
-  bottom: 0;
+  margin-bottom: 2rem;
 }
 
-.footerElements {
+#tabNotes {
+  height: 55vh;
+  width: 90vw;
+  border: 1px solid black;
+  background-color: rgba(0, 174, 255, 0.2);
+}
+
+#containerButtonBottom {
+  background-color: red;
+}
+
+#divButton {
+  background-color: #f6f7ff;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#buttonModify {
+  font-size: 17px;
+  padding: 1.3vh 50px;
+  background-color: #bd5b5b;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  max-height: 5vh;
+}
+
+#buttonAddRating {
+  font-size: 17px;
+  padding: 1.3vh 30px;
+  background-color: #5BBD7C;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  max-height: 5vh;
+}
+
+#divAverage {
+  display: flex;
+  justify-content: space-between;
+  height: 8vh;
+}
+
+#classAverage {
+  margin: 3vh 8vw;
+}
+
+#classAverageNote {
+  margin-right: 8vw;
+  border: 2px solid black;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+
+
+/*--------------------------------------------- FOOTER ------------ */
+
+#footer {
+  background-color: #8881d0;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+#footerElements {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-p {
+.titleH6 {
   margin-left: 15px;
   margin-right: 15px;
   font-size: 14px;
   color: white;
+}
+
+
+/* -------------------------------------- MEDIA QUERIES --- */
+
+@media screen and (min-width: 769px) {
+  header {
+    height: 7rem;
+    width: 100vw;
+  }
+  .imgProfil {
+    margin-left: 20px;
+  }
+  .container {
+    width: 25vw;
+    margin-left: 15px;
+  }
 }

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@100&family=Cardo&family=Crimson+Text&family=IBM+Plex+Sans+Condensed&display=swap%22");
+
 /* ---------------------------------------------------- BODY --- */
 
 body {
@@ -10,18 +12,31 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+    
+h1 {
+    font-size: 32px;
+}
 
 p {
     font-size: 17px;
+    font-family: "Asap", sans-serif;
 }
 
-button {
-    font-size: 17px;
+label {
+    font-size: 19px;
+    font-family: "Asap", sans-serif;
 }
 
 input {
     font-size: 19px;
+    font-family: "Asap", sans-serif;
 }
+
+button {
+    font-size: 17px;
+    font-family: "Asap", sans-serif;
+}
+
 
 /* --------------------------------------------------- HEADER --- */
 
@@ -54,7 +69,7 @@ input {
 
 #title {
     margin-bottom: 7vh;
-    font-weight: 200;
+    font-weight: bold;
 }
 
         #usernameLabel {
@@ -105,18 +120,45 @@ input {
     background-color: #ffb69f;
 }
 
+
 /* ----------------------------------------------------- FOOTER --- */
 
 #footer {
     display: flex;
     justify-content: space-between;
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100vw;
-    height: 6vh;  
+    height: 50px;  
 }
 
 .footerText {
     padding: 0 4vw;
     margin-bottom: 2vh;
+}
+
+
+/* ----------------------------------------------- MEDIA QUERIES --- */
+
+@media only screen and (min-width: 992px) {
+
+    h1 {
+        font-size: 37px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    label {
+        font-size: 22px;
+    }
+
+    input {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 22px;
+    }
 }
