@@ -16,6 +16,20 @@ a {
   font-size: 15px;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid rgb(133, 133, 133);
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: lightgray;
+}
 
 /*------------------------------------------------HEADER --------*/
 
@@ -67,10 +81,6 @@ a {
 
 /* ---------------------------------------------- MAIN -------------*/
 
-#allMain {
-
-}
-
     #divTopInfo {
       display: flex;
       justify-content: space-around;
@@ -94,7 +104,7 @@ a {
       margin-bottom: 0vh;
       font-size: 17px;
       padding: 1.3vh 70px;
-      background-color: #bd5b5b;
+      background-color: #FF8A65;
       color: white;
       border: none;
       border-radius: 50px;
@@ -103,6 +113,7 @@ a {
     #rating {
       margin: 2vh;
       margin-top: 1vh;
+      margin-bottom: 6vh;
       font-size: 17px;
       padding: 1.3vh 45px;
       background-color: #5BBD7C;
@@ -121,14 +132,16 @@ a {
 #containerTabNotes {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
 }
 
 #tabNotes {
   height: 55vh;
   width: 90vw;
-  border: 1px solid black;
-  background-color: rgba(0, 174, 255, 0.2);
+  overflow-y: scroll;
+}
+
+#howmanyStudents {
+  text-align: center;
 }
 
 #containerButtonBottom {
@@ -139,12 +152,13 @@ a {
   background-color: #f6f7ff;
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 2rem;
 }
 
 #buttonModify {
   font-size: 17px;
   padding: 1.3vh 50px;
-  background-color: #bd5b5b;
+  background-color: #FF8A65;
   color: white;
   border: none;
   border-radius: 50px;
@@ -165,6 +179,7 @@ a {
   display: flex;
   justify-content: space-between;
   height: 8vh;
+  margin-bottom: 2rem;
 }
 
 #classAverage {
@@ -173,10 +188,10 @@ a {
 
 #classAverageNote {
   margin-right: 8vw;
-  border: 2px solid black;
+  border: 2px solid rgb(170, 170, 170);
   padding-right: 15px;
   padding-left: 15px;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 
