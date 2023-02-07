@@ -2,8 +2,9 @@
 
 /*------------------------------------------------BODY -------- */
 
-body {
+html, body {
   margin: 0;
+  height: 100%;
   position: relative;
   font-family: "Asap", sans-serif;
   background-color: #f6f7ff;
@@ -108,6 +109,11 @@ th {
       color: white;
       border: none;
       border-radius: 50px;
+      text-align: center;
+    }
+
+    #quarters:hover {
+      cursor: pointer;
     }
 
     #rating {
@@ -122,6 +128,9 @@ th {
       border-radius: 50px;
     }
 
+    #rating:hover {
+      cursor: pointer;
+    }
 
 #bottomInfo {
   display: flex;
