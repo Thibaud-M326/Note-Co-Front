@@ -3,162 +3,157 @@
 /* ---------------------------------------------------- BODY --- */
 
 body {
-    font-family: "Asap", sans-serif;
-    margin: 0px;
-    padding: 0px;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  font-family: "Asap", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-    
+
 h1 {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 p {
-    font-size: 17px;
-    font-family: "Asap", sans-serif;
+  font-size: 17px;
+  font-family: "Asap", sans-serif;
 }
 
 label {
-    font-size: 19px;
-    font-family: "Asap", sans-serif;
+  font-size: 19px;
+  font-family: "Asap", sans-serif;
 }
 
 input {
-    font-size: 19px;
-    font-family: "Asap", sans-serif;
+  font-size: 19px;
+  font-family: "Asap", sans-serif;
 }
 
 button {
-    font-size: 17px;
-    font-family: "Asap", sans-serif;
+  font-size: 17px;
+  font-family: "Asap", sans-serif;
 }
-
 
 /* --------------------------------------------------- HEADER --- */
 
 #header {
-    background-color: #FF8A65;
-    height: 38vh;
+  background-color: #ff8a65;
+  height: 38vh;
 }
 
 #headerBackGround {
-    width: 100%;
-    height: 97%;
-    object-fit: cover;
+  width: 100%;
+  height: 97%;
+  object-fit: cover;
 }
-
 
 /* --------------------------------------------------- MAIN --- */
 
 #main {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20vh;
 }
 
 #mainCenteredItems {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #title {
-    margin-bottom: 7vh;
-    font-weight: bold;
+  margin-bottom: 7vh;
+  font-weight: bold;
 }
 
-        #usernameLabel {
-            padding: 0 2vh;
-            font-size: 17px;
-        }
+#usernameLabel {
+  padding: 0 2vh;
+  font-size: 17px;
+}
 
-        #usernameInput {
-            max-width: 500px;
-            width: 60vw;
-            padding: 0.7vh 0;
-            padding-left: 20px;
-            border: 1px solid black;
-            border-radius: 50px;
-            margin-bottom: 2vh;
-            margin-top: 0.5vh;
-        }
+#usernameInput {
+  max-width: 500px;
+  width: 60vw;
+  padding: 0.7vh 0;
+  padding-left: 20px;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-bottom: 2vh;
+  margin-top: 0.5vh;
+}
 
-        #passwordLabel {
-            padding: 0 2vh;
-            font-size: 17px;
-        }
+#passwordLabel {
+  padding: 0 2vh;
+  font-size: 17px;
+}
 
-        #passwordInput {
-            max-width: 500px;
-            width: 60vw;
-            padding: 0.7vh 0;
-            padding-left: 20px;
-            border: 1px solid black;
-            border-radius: 50px;
-            margin-bottom: 5vh;
-            margin-top: 0.5vh;
-        }
+#passwordInput {
+  max-width: 500px;
+  width: 60vw;
+  padding: 0.7vh 0;
+  padding-left: 20px;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-bottom: 5vh;
+  margin-top: 0.5vh;
+}
 
 #connexionButton {
-    padding: 1vh 30px;
-    border-radius: 50px;
-    border: none;
-    color: white;
-    background-color: #FF8A65;
+  padding: 1vh 30px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  background-color: #ff8a65;
 }
 
 #connexionButton:hover {
-    background-color: #fd9778;
+  background-color: #fd9778;
 }
 
 #connexionButton:active {
-    background-color: #ffb69f;
+  background-color: #ffb69f;
 }
-
 
 /* ----------------------------------------------------- FOOTER --- */
 
 #footer {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: 50px;  
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 50px;
 }
 
 .footerText {
-    padding: 0 4vw;
-    margin-bottom: 2vh;
+  padding: 0 4vw;
+  margin-bottom: 2vh;
 }
-
 
 /* ----------------------------------------------- MEDIA QUERIES --- */
 
 @media only screen and (min-width: 992px) {
+  h1 {
+    font-size: 37px;
+  }
 
-    h1 {
-        font-size: 37px;
-    }
+  p {
+    font-size: 17px;
+  }
 
-    p {
-        font-size: 17px;
-    }
+  label {
+    font-size: 22px;
+  }
 
-    label {
-        font-size: 22px;
-    }
+  input {
+    font-size: 24px;
+  }
 
-    input {
-        font-size: 24px;
-    }
-
-    button {
-        font-size: 22px;
-    }
+  button {
+    font-size: 22px;
+  }
 }
