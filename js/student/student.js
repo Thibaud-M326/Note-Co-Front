@@ -312,6 +312,7 @@ let sumofAllGrades = 0;
 let previousCourseName = "";
 let recupCourseName = "";
 let recupDateGrades = "";
+let sumByCourse = "";
 //boucle sur les matières
 for (i = 0; i < subjectList.length; i++) {
   //boucle sur le devoir
@@ -337,21 +338,24 @@ for (i = 0; i < subjectList.length; i++) {
         //Nombre total de notes
         numberGrades++;
 
-        //note la plus élevée
         const currentGrade =
           subjectList[i].grade[gradesIndex].students[studentIndex].note;
+        //note la plus élevée
         if (highestGrade == null || highestGrade < currentGrade) {
           highestGrade = currentGrade;
         }
-
         //note la plus basse
         if (lowestGrade == null || lowestGrade > currentGrade) {
           lowestGrade = currentGrade;
         }
-        //afficher la moyenne par matiere
+        //afficher la moyenne générale
         countGrade = sumofAllGrades += numberStudentGrade;
         averageGrade = parseFloat(countGrade / numberGrades).toFixed(1);
         // console.log(averageGrade);
+
+        // Afficher la moyenne par matiere
+        if (subjectList[i].course == previousCourseName) {
+        }
 
         //affichage matieres + dates + notes
         let tdSubjectCourses = "";
@@ -385,10 +389,6 @@ for (i = 0; i < subjectList.length; i++) {
       <td id="gradeInTable">${subjectList[i].grade[gradesIndex].students[studentIndex].note}</td>
         </tr>
         `;
-        //afficher date du devoir dans modal moyenne
-        titleModalDateGrade += `
-        <h4 id="modal-title ">${subjectList[i].grade[gradesIndex].date} </h4>
-        `;
       }
     }
   }
@@ -403,7 +403,6 @@ function sendCourseNameModal(i) {
 function sendDateGradeModal(i, gradesIndex) {
   recupDateGrades = subjectList[i].grade[gradesIndex].date;
   document.getElementById("titleModalDateGrade").innerHTML = recupDateGrades;
-  console.log(gradesIndex);
 }
 
 document.getElementById("gradesNumber").innerHTML = numberGrades;
@@ -428,12 +427,16 @@ for (i = 0; i < subjectList.length; i++) {
       studentIndex++
     ) {
       if (
-        subjectList[i].grade[gradesIndex].students[studentIndex].idStudent === 1
+        subjectList[i].grade[gradesIndex].students[studentIndex].idStudent !==
+        null
       ) {
-        const numberStudentsGrade =
-          subjectList[i].grade[gradesIndex].students[studentIndex].note;
-        // console.log(numberStudentsGrade);
       }
+      const numberStudentGrade =
+        subjectList[i].grade[gradesIndex].students[studentIndex].note;
+      numberGrades++;
+      console.log(numberStudentGrade);
     }
   }
 }
+
+document.getElementById("mediumGradeModal").innerHTML = numberStudentGrade;
