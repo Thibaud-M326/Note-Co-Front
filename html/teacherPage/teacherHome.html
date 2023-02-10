@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teacher Home</title>
     <link rel="stylesheet" href="../../css/teacherStyle/teacherHome.css" />
+    <title>Teacher Home</title>
   </head>
   <body>
+
+<!-- HEAD -->
 
     <header id="header">
       <nav id="headerNav">
@@ -22,11 +24,14 @@
       </nav>
     </header>
 
+<!-- MAIN -->
 
     <div id="allMain">
       <div id="divTopInfo">
         <div id="divSubject">
-          <h1 id="subject">Anglais</h1>
+          <h1 id="subject">
+            <!-- JS INJECT -->
+          </h1>
         </div>
 
         <div id="divSelects">
@@ -77,8 +82,84 @@
       </div>
     </div>
 
+<!-- MODAL DETAIL NOTE -->
 
+<!-- the modal -->
+<div id="myModal" class="modal">
 
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="insideModal">
+      <!-- JS INJECT    num student -->
+    </p>
+      <div id="topModalInfo">
+        <h2 id="studentName">
+          Luciana Andrada
+          <!-- JS INJECT -->
+        </h2>
+        <select name="quarters" id="quarters">
+          <option value="quarter1">Trimestre 1</option>
+          <option value="quarter2">Trimestre 2</option>
+          <option value="quarter3">Trimestre 3</option>
+        </select>
+      </div>
+      <div id="averageInfoModal">
+        <h3>Moyennes</h3>
+        <div id="allBoxes">
+          <div id="boxAverageAll">
+            <p style="margin-top: 0;">Generale</p>
+            <div id="averageAllNotes"></div>
+          </div>
+          <div id="boxAverageWritten">
+            <p style="margin-top: 0;">Ecrit</p>
+            <div id="averageWrittenNotes"></div>
+          </div>
+          <div id="boxAverageOral">
+            <p style="margin-top: 0;">Oral</p>
+            <div id="averageOralNotes">18.00</div>
+          </div>
+        </div>
+      </div>
+      <h3>Devoirs</h3>
+      <div id="tabForAllNotes">
+        <table>
+          <thead>
+            <tr>
+              <td>Date</td>
+              <td>Type</td>
+              <td>Note</td>
+              <td>Coef</td>
+            </tr>
+          </thead>
+          <tbody id="tbodyModal">
+            <!-- JS INJECT -->
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+</div>
+
+<!-- MODAL GRAPH -->
+
+<h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
 
     <footer id="footer">
       <div id="footerElements">

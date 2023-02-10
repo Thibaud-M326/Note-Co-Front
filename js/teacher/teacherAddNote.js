@@ -5,6 +5,7 @@ let studentChar = "";
 let sum = 0;
 let average = 0;
 
+// ----------------------------
 let subjectList = [
     {	
         "id" : 1,
@@ -13,7 +14,7 @@ let subjectList = [
         "grade" :  [ 
             {
             "type" : "ecrit",
-            "date" : "2020-02-28",
+            "date" : "2020-09-02",
             "coef" : 1,
             "students" : [
                 {
@@ -40,34 +41,57 @@ let subjectList = [
                     "idStudent": 6,
                     "note" : 10
                 }
-            ]}
-        ]
-    },
-    {
-        "id" : 2,
-        "coef": 2,
-        "course": "Histoire", 
-        "grade" :  [
+            ]},
             {
             "type" : "oral",
-            "date" : "2020-03-16",
-            "coef" : 1,
+            "date" : "2020-09-13",
+            "coef" : 2,
             "students" : [
                 {
                     "idStudent": 1,
-                    "note" : 10
+                    "note" : 13
                 },
                 {
                     "idStudent": 2,
-                    "note" : 11
+                    "note" : 16
                 },
                 {
                     "idStudent": 3,
-                    "note" : 14
+                    "note" : 4
                 },
                 {
                     "idStudent": 4,
-                    "note" : 18
+                    "note" : 14
+                },
+                {
+                    "idStudent": 5,
+                    "note" : 19
+                },
+                {
+                    "idStudent": 6,
+                    "note" : 10
+                }
+            ]},
+            {
+            "type" : "ecrit",
+            "date" : "2020-09-18",
+            "coef" : 2,
+            "students" : [
+                {
+                    "idStudent": 1,
+                    "note" : 11
+                },
+                {
+                    "idStudent": 2,
+                    "note" : 12
+                },
+                {
+                    "idStudent": 3,
+                    "note" : 17
+                },
+                {
+                    "idStudent": 4,
+                    "note" : 19
                 },
                 {
                     "idStudent": 5,
@@ -75,7 +99,104 @@ let subjectList = [
                 },
                 {
                     "idStudent": 6,
-                    "note" : 10
+                    "note" : 17
+                }
+            ]}
+        ]
+    },
+    {
+        "id" : 2,
+        "coef": 1,
+        "course": "Histoire", 
+        "grade" :  [
+            {
+            "type" : "ecrit",
+            "date" : "2020-09-02",
+            "coef" : 1,
+            "students" : [
+                {
+                    "idStudent": 1,
+                    "note" : 13
+                },
+                {
+                    "idStudent": 2,
+                    "note" : 15
+                },
+                {
+                    "idStudent": 3,
+                    "note" : 11
+                },
+                {
+                    "idStudent": 4,
+                    "note" : 21
+                },
+                {
+                    "idStudent": 5,
+                    "note" : 12
+                },
+                {
+                    "idStudent": 6,
+                    "note" : 12
+                }
+            ]},
+            {
+            "type" : "oral",
+            "date" : "2020-09-13",
+            "coef" : 2,
+            "students" : [
+                {
+                    "idStudent": 1,
+                    "note" : 15
+                },
+                {
+                    "idStudent": 2,
+                    "note" : 14
+                },
+                {
+                    "idStudent": 3,
+                    "note" : 2
+                },
+                {
+                    "idStudent": 4,
+                    "note" : 17
+                },
+                {
+                    "idStudent": 5,
+                    "note" : 18
+                },
+                {
+                    "idStudent": 6,
+                    "note" : 12
+                }
+            ]},
+            {
+            "type" : "ecrit",
+            "date" : "2020-09-18",
+            "coef" : 2,
+            "students" : [
+                {
+                    "idStudent": 1,
+                    "note" : 13
+                },
+                {
+                    "idStudent": 2,
+                    "note" : 16
+                },
+                {
+                    "idStudent": 3,
+                    "note" : 14
+                },
+                {
+                    "idStudent": 4,
+                    "note" : 20
+                },
+                {
+                    "idStudent": 5,
+                    "note" : 9
+                },
+                {
+                    "idStudent": 6,
+                    "note" : 12
                 }
             ]}
         ]
@@ -87,20 +208,80 @@ let subjectList = [
         "grade" :  [
             {
             "type" : "ecrit",
-            "date" : "2020-03-14",
+            "date" : "2020-09-02",
             "coef" : 1,
             "students" : [
                 {
                     "idStudent": 1,
-                    "note" : 4
+                    "note" : 15
                 },
                 {
                     "idStudent": 2,
-                    "note" : 19
+                    "note" : 12
                 },
                 {
                     "idStudent": 3,
+                    "note" : 8
+                },
+                {
+                    "idStudent": 4,
+                    "note" : 17
+                },
+                {
+                    "idStudent": 5,
+                    "note" : 10
+                },
+                {
+                    "idStudent": 6,
+                    "note" : 9
+                }
+            ]},
+            {
+            "type" : "oral",
+            "date" : "2020-09-13",
+            "coef" : 3,
+            "students" : [
+                {
+                    "idStudent": 1,
+                    "note" : 11
+                },
+                {
+                    "idStudent": 2,
+                    "note" : 17
+                },
+                {
+                    "idStudent": 3,
+                    "note" : 1
+                },
+                {
+                    "idStudent": 4,
                     "note" : 18
+                },
+                {
+                    "idStudent": 5,
+                    "note" : 18
+                },
+                {
+                    "idStudent": 6,
+                    "note" : 15
+                }
+            ]},
+            {
+            "type" : "ecrit",
+            "date" : "2020-09-18",
+            "coef" : 1,
+            "students" : [
+                {
+                    "idStudent": 1,
+                    "note" : 15
+                },
+                {
+                    "idStudent": 2,
+                    "note" : 13
+                },
+                {
+                    "idStudent": 3,
+                    "note" : 17
                 },
                 {
                     "idStudent": 4,
@@ -108,16 +289,15 @@ let subjectList = [
                 },
                 {
                     "idStudent": 5,
-                    "note" : 2
+                    "note" : 12
                 },
                 {
                     "idStudent": 6,
-                    "note" : 9
+                    "note" : 12
                 }
             ]}
         ]
     }
-
 ]
 
 console.log(subjectList[0].grade[0].students[0].note);
@@ -253,6 +433,7 @@ let students = [
         "id" : 18
     }
 ];
+// ----------------------------
 
 
 for(let i = 0; i < 6; i++) {
