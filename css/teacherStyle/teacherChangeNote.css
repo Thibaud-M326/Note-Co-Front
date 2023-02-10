@@ -1,0 +1,59 @@
+/* ---------------------------------------------------- BODY --- */
+
+
+/* --------------------------------------------------- HEADER --- */
+#topInfo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#backButton, a {
+    color: black;
+    background-color: #f6f7ff;
+    border: none;
+}
+
+#backButton:hover {
+    cursor: pointer;
+}
+
+#midInfo {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 7vh;
+}
+
+#dateAndQuarter {
+    display: flex;
+    flex-direction: column;
+}
+
+#start {
+      margin: 3vh;
+      margin-bottom: 0vh;
+      font-size: 17px;
+      padding: 1.3vh 70px;
+      background-color: #5BBD7C;
+      color: white;
+      border: none;
+      border-radius: 50px;
+}
+
+#coefAndNote {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30vh;
+    font-size: 17px;
+}
+
+.inputNote {
+    width: 97%;
+    max-width: 60px;
+    font-size: 17px;
+} 
+/* --------------------------------------------------- MAIN --- */
+
+
+/* --------------------------------------------------- FOOTER --- */
