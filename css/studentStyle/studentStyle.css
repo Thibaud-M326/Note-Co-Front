@@ -19,9 +19,13 @@ h1 {
 
 h2 {
   font-size: 15px !important;
-  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
-
+h3 {
+  font-size: 15px !important;
+  margin-top: 2vh !important;
+  margin-right: 10vw !important;
+}
 p {
   font-size: 10px !important;
 }
@@ -95,7 +99,7 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2vh;
+  margin-top: 2vw;
 }
 
 #summaryScore {
@@ -163,23 +167,14 @@ select {
 #containerTable {
   display: flex;
   height: 50vh;
-  width: 50vw;
-  height: 50vh;
+  width: 80vw;
+  height: 45vh;
   margin-bottom: 3vh;
   border: 1px solid black;
-
-  /* scrollbar */
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
 }
-
-#subjectsTable {
-  display: flex;
-  flex-direction: column;
-  width: 50vw;
-}
-#subjectCourses {
-  border: 1px solid;
-}
-
 #graphic {
   display: flex;
   height: 50vh;
@@ -187,6 +182,66 @@ select {
   height: 50vh;
   border: 1px solid black;
 }
+#AverageStudent {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-bottom: 10px;
+  align-self: center;
+  padding-bottom: 0 !important;
+}
+#average {
+  border: none;
+  background-color: #f6f7ff;
+  padding-top: 0;
+  font-size: 15px !important;
+  margin-top: 2vh !important;
+}
+/*...................................Partie dans le JS */
+#courseName {
+  display: flex;
+}
+
+#subjectsTable {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  padding-left: 2px;
+}
+#subjectCourses {
+  border-bottom: 2px solid #5bbd7c;
+  width: 70vw;
+}
+.datesAndGrades {
+  display: flex;
+  flex-direction: row;
+}
+#subjectGrades {
+  display: flex;
+  justify-content: space-between;
+}
+#gradesDetails {
+  display: flex;
+}
+#btnOpenModal1 {
+  border: none;
+  color: red;
+  background-color: #f6f7ff;
+  cursor: pointer;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+#btnOpenModalGrade {
+  border: none;
+  color: blue;
+  background-color: #f6f7ff;
+  cursor: pointer;
+}
+#gradeInTable {
+  color: rgb(144, 16, 97);
+  padding-right: 15px;
+}
+
 /* --------------------------------------------------- FOOTER --- */
 
 footer {
@@ -208,6 +263,8 @@ footer {
 }
 
 /* ..................................................MODAL */
+
+/* MODAL MATIERE */
 .modal-body {
   display: flex;
 }
@@ -264,6 +321,8 @@ footer {
   padding-top: 4px;
 }
 
+/* MODAL DATE */
+
 @media screen and (min-width: 769px) {
   /* ....................................BODY */
 
@@ -299,6 +358,7 @@ footer {
   #container {
     display: block;
     margin-left: 3vw;
+    max-width: 50vw;
   }
   #summaryScore {
     width: 40vw;
@@ -309,10 +369,11 @@ footer {
   #table {
     width: 40vw;
   }
+
   /*..................................... FOOTER */
   footer {
     height: 10vh;
-    position: fixed;
+    /* position: fixed; */
   }
 
   .footerElements {
