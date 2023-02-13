@@ -317,6 +317,24 @@ th {
   margin-top: 4vh;
   /* background-color: rgb(255, 211, 211); */
 }
+
+/*-------------------------------------------------- MODAL GRAPH---- */
+
+/* The Close Button */
+.exit {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.exit:hover,
+.exit:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /*--------------------------------------------- FOOTER ------------ */
 
 #footer {

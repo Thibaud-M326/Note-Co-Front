@@ -12,12 +12,36 @@ const averageAllNotes = document.getElementById("averageAllNotes");
 const averageWrittenNotes = document.getElementById("averageWrittenNotes");
 const averageOralNotes = document.getElementById("averageOralNotes");
 const tbodyModal = document.getElementById("tbodyModal");
+const graphModal = document.getElementById("graphModal");
+const graph = document.getElementById("graph");
+const exit = document.getElementsByClassName("exit")[0];
+const insideGraphModal = document.getElementById("insideGraphModal");
 const studentList = 6;
 let tab = "";
 let sum = 0;
 let average = 0;
 let ratingInsert = "";
 let valueSelected = "";
+
+
+
+let dataObject = [];
+
+fetch('../../json/subjectList.json')
+  .then(res => res.json())
+  .then(data => {
+    console.log(data.subjectList[0].grade[0].students[2].note); // accédez à une propriété en utilisant des indices
+		
+		callWhen(data);
+	
+	})
+	.catch(error => console.error(error));
+
+
+function callWhen(data) {
+
+	console.log(data);
+}
 
 
 
@@ -314,7 +338,7 @@ let subjectList = [
             ]}
         ]
     }
-]
+];
 
 // console.log(subjectList[0].grade[0].students[0].note);
 // console.log(subjectList[0].grade[0].type);
@@ -522,7 +546,8 @@ function changeNoteList() {
 
 
 
-//la modal
+//---------la modal----------------//
+
 function showModal(i) {
     modal.style.display = "block";
     insideModal.innerHTML = i;
@@ -589,7 +614,6 @@ function showModal(i) {
     tbodyModal.innerHTML = tab;
 }
 
-
 span.onclick = function() {
     modal.style.display = "none";
 }
@@ -597,6 +621,25 @@ span.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+  }
+}
+
+
+//---------modal graph--------//
+
+
+graph.onclick = function() {
+  graphModal.style.display = "block";
+  insideGraphModal.innerHTML = "hello its me";
+}
+
+exit.onclick = function() {
+  graphModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == graphModal) {
+    graphModal.style.display = "none";
   }
 }
 
