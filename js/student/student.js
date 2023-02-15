@@ -304,6 +304,7 @@ let subjectsTable = "";
 let numberGrades = 0;
 let sumofAllGrades = 0;
 let previousCourseName = "";
+
 //boucle sur les matières
 for (i = 0; i < subjectList.length; i++) {
   //boucle sur le devoir
@@ -423,25 +424,25 @@ function computeCourseAverage(courseName) {
         studentIndex = 0;
         studentIndex < subjectList[i].grade[gradesIndex].students.length;
         studentIndex++
-      )
+      ) {
         if (subjectList[i].course === courseName) {
-          {
-            numberStudentsGrade =
-              subjectList[i].grade[gradesIndex].students[studentIndex].note;
-            numberGradesCourses++;
-            // console.log(numberGradesEnglishCourse);
+          numberStudentsGrade =
+            subjectList[i].grade[gradesIndex].students[studentIndex].note;
+          numberGradesCourses++;
 
-            //Moyenne générale toutes matières confondues
-            sumofAllGradesCourses += numberStudentsGrade;
-
-            averageGrade = parseFloat(
-              sumofAllGradesCourses / numberGradesCourses
-            ).toFixed(1);
-          }
+          //Moyenne générale toutes matières confondues
+          sumofAllGradesCourses = sumofAllGradesCourses + numberStudentsGrade;
         }
+      }
     }
   }
+  averageGrade = parseFloat(
+    sumofAllGradesCourses / numberGradesCourses
+  ).toFixed(1);
   document.getElementById("mediumGradeModal").innerHTML = averageGrade;
+
+  // renvoie le tableau
+  return averageGrade;
 }
 
 function computeStudentAverage(courseName) {
@@ -469,18 +470,23 @@ function computeStudentAverage(courseName) {
           const numberStudentsGrade =
             subjectList[i].grade[gradesIndex].students[studentIndex].note;
           numberGradesCourses++;
+
           sumofAllGradesCourses += numberStudentsGrade;
-          studentAverageGrade = parseFloat(
-            sumofAllGradesCourses / numberGradesCourses
-          ).toFixed(1);
         }
       }
     }
   }
-  console.log(studentAverageGrade);
+  studentAverageGrade = parseFloat(
+    sumofAllGradesCourses / numberGradesCourses
+  ).toFixed(1);
+
   document.getElementById("MediumStudentGradeModalCourse").innerHTML =
     studentAverageGrade;
+  // console.log(studentAverageGrade);
+
+  return [studentAverageGrade];
 }
+
 //recuperer note de lélève et l'afficher dans le modal "date"
 function sendStudentGrade(courseName, dateGrade) {
   let studentGrade = 0;
@@ -547,6 +553,7 @@ function getClassAverageGrade(courseName, dateGrade) {
   const averageGrade = parseFloat(
     sumOfAllStudentsGrades / numberGrades
   ).toFixed(1);
+
   return averageGrade;
 }
 
@@ -638,6 +645,7 @@ function sendDateGradeModal(i, gradesIndex) {
   );
 
   document.getElementById("avererageClassModal").innerHTML = classAverageGrade;
+  console.log(classAverageGrade);
 
   const highestGrade = getHighestGrade(subjectList[i].course, gradeDate);
   document.getElementById("highestGradeModal").innerHTML = highestGrade;
@@ -648,14 +656,14 @@ function sendDateGradeModal(i, gradesIndex) {
   document.getElementById("titleModalDateGrade").innerHTML = gradeDate;
 }
 
-function getLabels() {
+function getCourseNames() {
   let getCourses = [];
   for (i = 0; i < subjectList.length; i++) {
     getCourses.push(subjectList[i].course);
-    console.log(getCourses);
   }
   return getCourses;
 }
+let courseNames = getCourseNames();
 
 const canvas = document.getElementById("barCanvas").getContext("2d");
 const barCanvas = new Chart(canvas, {
@@ -663,24 +671,89 @@ const barCanvas = new Chart(canvas, {
   data: {
     datasets: [
       {
-        label: getLabels()[0],
-        data: [20],
+        label: courseNames[0],
+        data: [computeCourseAverage(courseNames[0])],
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
       },
       {
-        label: getLabels()[1],
-        data: [18],
+        label: courseNames[1],
+        data: [computeCourseAverage(courseNames[1])],
         backgroundColor: "rgba(255, 99, 132, 0.2)",
         borderColor: "rgba(255, 99, 132, 1)",
         borderWidth: 1,
       },
       {
-        label: getLabels()[2],
-        data: [23],
+        label: courseNames[2],
+        data: [computeCourseAverage(courseNames[2])],
+        backgroundColor: "rgba(43, 84, 12, 0.2)",
+        borderColor: "rgba(43, 84, 12, 1)",
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      xAxes: [
+        {
+          ticks: {
+            min: 0,
+            stepSize: 1,
+          },
+        },
+      ],
+      yAxes: [
+        {
+          ticks: {
+            max: 20,
+            beginAtZero: true,
+          },
+        },
+      ],
+    },
+  },
+});
+
+function getDateGrade() {
+  let getAverageClass = [];
+  for (i = 0; i < subjectList.length; i++) {
+    for (
+      gradesIndex = 0;
+      gradesIndex < subjectList[i].grade.length;
+      gradesIndex++
+    ) {
+      getAverageClass.push(subjectList[i].grade[gradesIndex].date);
+    }
+  }
+  return getAverageClass;
+}
+let dateGrade = getDateGrade();
+
+const graph = document.getElementById("studentAverageCanvas").getContext("2d");
+const studentAverageCanvas = new Chart(graph, {
+  type: "bar",
+  data: {
+    datasets: [
+      {
+        label: dateGrade[0],
+        data: [getClassAverageGrade(courseNames[0], dateGrade[0])],
         backgroundColor: "rgba(75, 192, 192, 0.2)",
         borderColor: "rgba(75, 192, 192, 1)",
+        borderWidth: 1,
+      },
+      {
+        label: dateGrade[1],
+        data: [getClassAverageGrade(courseNames[0], dateGrade[1])],
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        borderColor: "rgba(255, 99, 132, 1)",
+        borderWidth: 1,
+      },
+      {
+        label: dateGrade[2],
+        data: [getClassAverageGrade(courseNames[2], dateGrade[2])],
+        backgroundColor: "rgba(43, 84, 12, 0.2)",
+        borderColor: "rgba(43, 84, 12, 1)",
         borderWidth: 1,
       },
     ],

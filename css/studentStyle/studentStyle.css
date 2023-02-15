@@ -267,6 +267,7 @@ footer {
 /* MODAL MATIERE */
 .modal-body {
   display: flex;
+  justify-content: center;
 }
 
 #mediumClassModal {
@@ -305,6 +306,10 @@ footer {
   height: 27px;
   padding-top: 4px;
   font-size: 15px;
+}
+#graphiqueStudentAverage {
+  width: auto;
+  margin-right: 5px;
 }
 /* ..............................MODAL DATE */
 .modal-bodyDate {
@@ -425,6 +430,9 @@ footer {
   }
   .titleStudentGradeModal3 {
     width: 120px;
+  }
+  #barCanvas {
+    width: 100vw;
   }
   /*..................................... FOOTER */
   footer {
