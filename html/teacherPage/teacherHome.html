@@ -18,7 +18,8 @@
           <h1 id="teacherName">Mr Prof</h1>
         </div>
         <div id="secondPart">
-          <a id="graph" href="">Graphique</a>
+          <!-- <a id="graph" href="">Graphique</a> -->
+          <button id="graph">Graphique</button>
           <input id="signout" type="image" src="../../assets/img/sign-out.png"/>
         </div>
       </nav>
@@ -143,18 +144,15 @@
 
 <!-- MODAL GRAPH -->
 
-<h2>Modal Example</h2>
-
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="graphModal" class="modal">
 
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
+    <span class="exit">&times;</span>
+    <div id="insideGraphModal">
+      <!-- JS INJECT -->
+    </div>
   </div>
 
 </div>
