@@ -12,6 +12,10 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
   </head>
 
   <body>
@@ -19,27 +23,16 @@
       <nav id="nav">
         <div class="studentprofil">
           <img id="imgProfil" src="../../assets/img/avatar.png" alt="profil" />
-          <h1 id="studentUserName"></h1>
+          <h1 id="studentUserName">Tom Sawyer</h1>
         </div>
 
         <div class="secondPart">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            id="graph"
-            fill="currentColor"
+          <i
             class="bi bi-bar-chart-line"
-            viewBox="0 0 16 16"
-            data-backdrop="false"
+            id="graph"
             data-bs-toggle="modal"
             data-bs-target="#exampleModalCenter"
-          >
-            <path
-              d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"
-            />
-          </svg>
-
+          ></i>
           <input
             id="signout"
             type="image"
@@ -75,12 +68,6 @@
       </div>
 
       <table id="containerTable">
-        <!-- <thead id="titleTable">
-          <tr id="trTable">
-            <td>Matières</td>
-            <td>Notes</td>
-          </tr>
-        </thead></br> -->
         <tbody id="subjectsTable">
           <!-- <tr>
           <td><p id="dateSchoolWork"></p></td>
@@ -88,16 +75,11 @@
         </tr> -->
         </tbody>
       </table>
+    </div>
 
-      <!-- Button trigger modal -->
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-      >
-        Launch demo modal
-      </button>
+    <div id="AverageStudent">
+      <h3>Moyenne de l'élève</h3>
+      <input type="text" id="average" />
     </div>
 
     <footer>
@@ -130,7 +112,9 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <canvas id="barCanvas" aria-label="chart"></canvas>
+          </div>
         </div>
       </div>
     </div>
@@ -146,7 +130,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title fs-5" id="exampleModalLabel">Nom matiere</h4>
+            <h4 class="modal-title fs-5" id="CourseNameModal"></h4>
             <button
               type="button"
               class="btn-close"
@@ -159,26 +143,95 @@
               <div id="titleMediumClass">
                 <p>Moy. Classe</p>
               </div>
-              <div id="mediumGradeModal">
+              <div>
+                <p id="mediumGradeModal"></p>
+              </div>
+            </div>
+
+            <div id="mediumStudentModalCourse">
+              <div id="titleMediumStudentGradeModalCourse">
+                <p>Moy. élève</p>
+              </div>
+              <div id="MediumStudentGradeModalCourse">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div id="graphiqueStudentAverage">
+            <canvas id="studentAverageCanvas" aria-label="chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Date -->
+    <div
+      class="modal fade"
+      id="exampleModalGrade"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title fs-5" id="titleModalDateGrade"></h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-bodyDate">
+            <div class="titleStudentGradeModal1">
+              <div id="titleStudentGradeModal">
+                <p>Note Elève</p>
+              </div>
+              <div class="StudentGradeModal1" id="studentGrade">
                 <p>Note</p>
               </div>
             </div>
 
-            <div id="mediumMoreModal">
-              <div id="titleMoreGrade">
-                <p>Moy. +</p>
+            <div class="titleStudentGradeModal2">
+              <div id="titleMediumGradeClass">
+                <p>Moy. de classe</p>
               </div>
-              <div id="MoreGradeModal">
+              <div class="StudentGradeModal2" id="avererageClassModal">
                 <p>Note</p>
               </div>
             </div>
 
-            <div id="lessClassModal">
-              <div id="titlelessGrade">
-                <p>Moy. -</p>
+            <div class="titleStudentGradeModal3">
+              <div id="titleTypeGradeModal">
+                <p>Type</p>
               </div>
-              <div id="lessGradeModal">
-                <p>Note</p>
+              <div class="StudentGradeModal3" id="typeOfGradeModal3">
+                <p></p>
+              </div>
+            </div>
+            <div class="titleStudentGradeModal1">
+              <div id="titleCoefGradeModal">
+                <p>Coef</p>
+              </div>
+              <div class="StudentGradeModal1" id="coefGradeModal">
+                <p></p>
+              </div>
+            </div>
+            <div class="titleStudentGradeModal2">
+              <div id="titleLowestGradeClassModal">
+                <p>Note +</p>
+              </div>
+              <div class="StudentGradeModal2" id="highestGradeModal">
+                <p></p>
+              </div>
+            </div>
+            <div class="titleStudentGradeModal3">
+              <div id="titlehighestGradeClassModal">
+                <p>Note -</p>
+              </div>
+              <div class="StudentGradeModal3" id="lowestGradeModal">
+                <p></p>
               </div>
             </div>
           </div>
@@ -186,12 +239,13 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
-    <!-- <script src="../../js/student/student.js"></script> -->
-    <script src="../../js/student/tableau.js"></script>
+    <script src="../../js/student/student.js"></script>
   </body>
 </html>
