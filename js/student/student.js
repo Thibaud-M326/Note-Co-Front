@@ -628,6 +628,7 @@ function sendCourseNameModal(i) {
   computeCourseAverage(courseName);
   computeStudentAverage(courseName);
   document.getElementById("CourseNameModal").innerHTML = courseName;
+  generateCourseAverageGraph(courseName);
 }
 
 function sendDateGradeModal(i, gradesIndex) {
@@ -645,7 +646,7 @@ function sendDateGradeModal(i, gradesIndex) {
   );
 
   document.getElementById("avererageClassModal").innerHTML = classAverageGrade;
-  console.log(classAverageGrade);
+  // console.log(classAverageGrade);
 
   const highestGrade = getHighestGrade(subjectList[i].course, gradeDate);
   document.getElementById("highestGradeModal").innerHTML = highestGrade;
@@ -725,57 +726,85 @@ function getDateGrade() {
     ) {
       getAverageClass.push(subjectList[i].grade[gradesIndex].date);
     }
+    console.log(getAverageClass);
   }
   return getAverageClass;
 }
 let dateGrade = getDateGrade();
 
-const graph = document.getElementById("studentAverageCanvas").getContext("2d");
-const studentAverageCanvas = new Chart(graph, {
-  type: "bar",
-  data: {
-    datasets: [
-      {
-        label: dateGrade[0],
-        data: [getClassAverageGrade(courseNames[0], dateGrade[0])],
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
-        borderColor: "rgba(75, 192, 192, 1)",
-        borderWidth: 1,
-      },
-      {
-        label: dateGrade[1],
-        data: [getClassAverageGrade(courseNames[0], dateGrade[1])],
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
-        borderColor: "rgba(255, 99, 132, 1)",
-        borderWidth: 1,
-      },
-      {
-        label: dateGrade[2],
-        data: [getClassAverageGrade(courseNames[2], dateGrade[2])],
-        backgroundColor: "rgba(43, 84, 12, 0.2)",
-        borderColor: "rgba(43, 84, 12, 1)",
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    scales: {
-      xAxes: [
-        {
-          ticks: {
-            min: 0,
-            stepSize: 1,
-          },
-        },
-      ],
-      yAxes: [
-        {
-          ticks: {
-            max: 20,
-            beginAtZero: true,
-          },
-        },
-      ],
+function generateCourseAverageGraph(courseName) {
+  const datasets = [];
+  for (subject of subjectList) {
+    if (subject.course === courseName) {
+      for (grade of subject.grade) {
+        const averageGrade = getClassAverageGrade(courseName, grade.date);
+        const dataset = {
+          label: grade.date,
+          data: [averageGrade],
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          borderColor: "rgba(75, 192, 192, 1)",
+          borderWidth: 1,
+          order: 1,
+        };
+        datasets.push(dataset);
+      }
+    }
+    // const dataset2 = {
+    //   label: "toto",
+    //   data: [10],
+    //   backgroundColor: "rgba(75, 192, 192, 0.2)",
+    //   borderColor: "rgba(75, 192, 192, 1)",
+    //   borderWidth: 1,
+    //   type: "line",
+    //   order: 0,
+    // };
+
+    // datasets.push(dataset2);
+  }
+
+  const graph = document
+    .getElementById("studentAverageCanvas")
+    .getContext("2d");
+
+  new Chart(graph, {
+    type: "bar",
+    data: {
+      datasets,
     },
-  },
-});
+    options: {
+      scales: {
+        xAxes: [
+          {
+            ticks: {
+              min: 0,
+              stepSize: 1,
+            },
+          },
+        ],
+        yAxes: [
+          {
+            ticks: {
+              max: 20,
+              beginAtZero: true,
+            },
+          },
+        ],
+      },
+    },
+  });
+
+  // new Chart(graph, {
+  //   type: "line",
+  //   data: {
+  //     datasets: [
+  //       {
+  //         label: "My First Dataset",
+  //         data: [65, 59, 80, 81, 56, 55, 40],
+  //         fill: false,
+  //         borderColor: "rgb(75, 192, 192)",
+  //         tension: 0.1,
+  //       },
+  //     ],
+  //   },
+  // });
+}
