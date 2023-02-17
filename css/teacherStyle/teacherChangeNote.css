@@ -40,11 +40,16 @@
       border-radius: 50px;
 }
 
+#coefficientChange {
+    max-width: 60px;
+}
+
 #coefAndNote {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    /* flex-direction: column; */
     align-items: center;
-    width: 30vh;
+    width: 30vw;
     font-size: 17px;
 }
 

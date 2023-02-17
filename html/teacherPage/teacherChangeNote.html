@@ -40,17 +40,18 @@
     
     <div id="midInfo">
         <div id="dateAndQuarter">
-            <input type="date" id="start" name="trip-start" value="calendrier" min="2018-01-01" max="2028-12-31">    
+            <input type="date" id="start" name="trip-start" value="" min="2018-01-01" max="2028-12-31">    
             <select name="quarters" id="quarters">
-                <option value="quarter1">Trimestre 1</option>
-                <option value="quarter2">Trimestre 2</option>
-                <option value="quarter3">Trimestre 3</option>
+                <option id="optionEcrit" value="ecrit">Ecrit</option>
+                <option id="optionOral" value="oral">Oral</option>
             </select>
         </div>
         
         <div id="coefAndNote">
-            <p>coefficient :</p>
-            <p>1.00</p>
+            <p id="textCoef">coefficient :</p>
+            <p>
+              <input id="coefficientChange" type="text">
+            </p>
         </div>
     </div>
 
@@ -65,14 +66,7 @@
                     </tr>
                 </thead>
                 <tbody id="tbody">
-                    <!-- <tr>
-                        <td>Luciana</td>
-                        <td><input type="number" class="inputNote" value="19"></td>
-                    </tr>
-                    <tr>
-                        <td>Luciana</td>
-                        <td><input type="number" class="inputNote" value="19"></td>
-                    </tr> -->
+                  <!-- JS INJECT -->
                 </tbody>
             </table>
           </div>
