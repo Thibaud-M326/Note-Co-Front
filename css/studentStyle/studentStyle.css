@@ -19,9 +19,13 @@ h1 {
 
 h2 {
   font-size: 15px !important;
-  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
-
+h3 {
+  font-size: 15px !important;
+  margin-top: 2vh !important;
+  margin-right: 10vw !important;
+}
 p {
   font-size: 10px !important;
 }
@@ -46,6 +50,7 @@ h6 {
   background-color: #8881d0;
   display: flex;
   height: 12vh;
+  width: 100vw;
   position: sticky;
 }
 
@@ -95,7 +100,7 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2vh;
+  margin-top: 2vw;
 }
 
 #summaryScore {
@@ -163,23 +168,14 @@ select {
 #containerTable {
   display: flex;
   height: 50vh;
-  width: 50vw;
-  height: 50vh;
-  margin-bottom: 3vh;
-  border: 1px solid black;
-
-  /* scrollbar */
+  width: 80vw;
+  height: 45vh;
+  border-bottom: 1px solid black;
+  overflow-y: scroll;
+  scrollbar-color: blue orange;
+  scrollbar-width: thin;
+  margin-bottom: 10px;
 }
-
-#subjectsTable {
-  display: flex;
-  flex-direction: column;
-  width: 50vw;
-}
-#subjectCourses {
-  border: 1px solid;
-}
-
 #graphic {
   display: flex;
   height: 50vh;
@@ -187,6 +183,65 @@ select {
   height: 50vh;
   border: 1px solid black;
 }
+#AverageStudent {
+  display: flex;
+  margin-bottom: 10px;
+  margin-left: 7vw;
+  align-self: center;
+  padding-bottom: 0 !important;
+}
+#average {
+  border: none;
+  background-color: #f6f7ff;
+  padding-top: 0;
+  font-size: 15px !important;
+  margin-top: 2vh !important;
+}
+/*...................................Partie dans le JS */
+#courseName {
+  display: flex;
+}
+
+#subjectsTable {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  padding-left: 2px;
+}
+#subjectCourses {
+  border-bottom: 2px solid #5bbd7c;
+  width: 70vw;
+}
+.datesAndGrades {
+  display: flex;
+  flex-direction: row;
+}
+#subjectGrades {
+  display: flex;
+  justify-content: space-between;
+}
+#gradesDetails {
+  display: flex;
+}
+#btnOpenModal1 {
+  border: none;
+  color: red;
+  background-color: #f6f7ff;
+  cursor: pointer;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+#btnOpenModalGrade {
+  border: none;
+  color: blue;
+  background-color: #f6f7ff;
+  cursor: pointer;
+}
+#gradeInTable {
+  color: rgb(144, 16, 97);
+  padding-right: 15px;
+}
+
 /* --------------------------------------------------- FOOTER --- */
 
 footer {
@@ -204,12 +259,15 @@ footer {
 .footerElements {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
 }
 
 /* ..................................................MODAL */
+
+/* MODAL MATIERE */
 .modal-body {
   display: flex;
+  justify-content: center;
 }
 
 #mediumClassModal {
@@ -227,8 +285,9 @@ footer {
   border: 1px solid #9575cd;
   height: 27px;
   padding-top: 4px;
+  font-size: 15px !important;
 }
-#mediumMoreModal {
+#mediumStudentModalCourse {
   background-color: #ff8a65;
   color: white;
   margin-bottom: 10px;
@@ -237,31 +296,77 @@ footer {
   margin-right: 15px;
   padding-top: 12px;
   text-align: center;
+  font-size: 15px;
 }
 
-#MoreGradeModal {
+#MediumStudentGradeModalCourse {
   background-color: white;
   color: black;
   border: 1px solid #ff8a65;
   height: 27px;
   padding-top: 4px;
+  font-size: 15px;
 }
-#lessClassModal {
+#graphiqueStudentAverage {
+  width: auto;
+  margin-right: 5px;
+}
+/* ..............................MODAL DATE */
+.modal-bodyDate {
+  /* display: flex; */
+  columns: 3;
+  align-self: center;
+}
+.titleStudentGradeModal1 {
+  background-color: #9575cd;
+  color: white;
+  margin-bottom: 10px;
+  height: 70px;
+  width: 25vw;
+  padding-top: 12px;
+  text-align: center;
+}
+.titleStudentGradeModal2 {
+  background-color: #ff8a65;
+  color: white;
+  margin-bottom: 10px;
+  height: 70px;
+  width: 25vw;
+  padding-top: 12px;
+  text-align: center;
+}
+.titleStudentGradeModal3 {
   background-color: #6c6ace;
   color: white;
   margin-bottom: 10px;
   height: 70px;
   width: 25vw;
-  margin-right: 15px;
   padding-top: 12px;
   text-align: center;
 }
-#lessGradeModal {
+.StudentGradeModal1 {
+  background-color: white;
+  color: black;
+  border: 1px solid #9575cd;
+  height: 27px;
+  padding-top: 4px;
+  font-size: 15px;
+}
+.StudentGradeModal2 {
+  background-color: white;
+  color: black;
+  border: 1px solid #ff8a65;
+  height: 27px;
+  padding-top: 4px;
+  font-size: 15px;
+}
+.StudentGradeModal3 {
   background-color: white;
   color: black;
   border: 1px solid #6c6ace;
   height: 27px;
   padding-top: 4px;
+  font-size: 15px;
 }
 
 @media screen and (min-width: 769px) {
@@ -299,6 +404,7 @@ footer {
   #container {
     display: block;
     margin-left: 3vw;
+    max-width: 50vw;
   }
   #summaryScore {
     width: 40vw;
@@ -309,10 +415,29 @@ footer {
   #table {
     width: 40vw;
   }
+  /*........................................MODAL*/
+  .modal-bodyDate {
+    /* columns: 3; */
+    align-self: center;
+    margin-top: 10px;
+    padding-right: 0;
+  }
+  .titleStudentGradeModal1 {
+    width: 120px;
+  }
+  .titleStudentGradeModal2 {
+    width: 120px;
+  }
+  .titleStudentGradeModal3 {
+    width: 120px;
+  }
+  #barCanvas {
+    width: 100vw;
+  }
   /*..................................... FOOTER */
   footer {
     height: 10vh;
-    position: fixed;
+    width: 100vw;
   }
 
   .footerElements {
