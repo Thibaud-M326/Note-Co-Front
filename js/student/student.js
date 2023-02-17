@@ -22,7 +22,7 @@ fetch("../../json/subjectList.json")
         for (studentIndex = 0; studentIndex < jsonSubj.subjectList[i].grade[gradesIndex].students.length; studentIndex++) {
           //recupération des données de l'étudiants 1
           if (jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex].idStudent === 1) {
-            const numberStudentGrade = jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex].note;
+            const numberStudentGrade = parseInt(jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex].note);
 
             //Nombre total de notes
             numberGrades++;
@@ -121,7 +121,7 @@ function computeCourseAverage(courseName) {
       //boucle sur les étudiants
       for (let studentIndex = 0; studentIndex < subjectList[i].grade[gradesIndex].students.length; studentIndex++) {
         if (subjectList[i].course === courseName) {
-          numberStudentsGrade = subjectList[i].grade[gradesIndex].students[studentIndex].note;
+          numberStudentsGrade = parseInt(subjectList[i].grade[gradesIndex].students[studentIndex].note);
           numberGradesCourses++;
 
           //Moyenne générale toutes matières confondues
@@ -147,7 +147,7 @@ function computeStudentAverage(courseName, jsonSubj) {
       //boucle sur les étudiants
       for (let studentIndex = 0; studentIndex < jsonSubj.subjectList[i].grade[gradesIndex].students.length; studentIndex++) {
         if (jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex].idStudent === 1 && jsonSubj.subjectList[i].course === courseName) {
-          const numberStudentsGrade = jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex].note;
+          const numberStudentsGrade = parseInt(jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex].note);
           numberGradesCourses++;
 
           sumofAllGradesCourses += numberStudentsGrade;
@@ -218,7 +218,7 @@ function getClassAverageGrade(courseName, dateGrade) {
       for (studentIndex = 0; studentIndex < subjectList[i].grade[gradesIndex].students.length; studentIndex++) {
         if (subjectList[i].course === courseName && subjectList[i].grade[gradesIndex].date == dateGrade) {
           {
-            studentGrade = subjectList[i].grade[gradesIndex].students[studentIndex].note;
+            studentGrade = parseInt(subjectList[i].grade[gradesIndex].students[studentIndex].note);
             numberGrades++;
             sumOfAllStudentsGrades = sumOfAllStudentsGrades + studentGrade;
           }

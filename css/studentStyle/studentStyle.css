@@ -12,14 +12,15 @@ body {
 }
 
 h1 {
-  font-size: 15px !important;
+  font-size: 32px !important;
   color: white !important;
   margin-left: 8px !important;
 }
 
 h2 {
-  font-size: 15px !important;
+  font-size: 17px !important;
   padding-bottom: 0px !important;
+  font-weight: bolder !important;
 }
 h3 {
   font-size: 15px !important;
@@ -27,14 +28,15 @@ h3 {
   margin-right: 10vw !important;
 }
 p {
-  font-size: 10px !important;
+  font-size: 17px !important;
+  font-weight: bolder !important;
 }
 
 a {
   text-decoration: none;
   color: white;
   margin-right: 10px;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 h6 {
