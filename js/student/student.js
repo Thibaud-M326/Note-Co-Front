@@ -12,32 +12,17 @@ fetch("../../json/subjectList.json")
     let sumofAllGrades = 0;
     let previousCourseName = "";
     const myBtnOpenModal = document.getElementsByClassName("myBtnOpenModal");
-    const myBtnOpenModalAverage =
-      document.getElementById("barCanvas").innerHTML;
+    // const myBtnOpenModalAverage = document.getElementById("barCanvas").innerHTML;
 
     //boucle sur les matières
     for (i = 0; i < jsonSubj.subjectList.length; i++) {
       //boucle sur le devoir
-      for (
-        gradesIndex = 0;
-        gradesIndex < jsonSubj.subjectList[i].grade.length;
-        gradesIndex++
-      ) {
+      for (gradesIndex = 0; gradesIndex < jsonSubj.subjectList[i].grade.length; gradesIndex++) {
         //boucle sur les étudiants
-        for (
-          studentIndex = 0;
-          studentIndex <
-          jsonSubj.subjectList[i].grade[gradesIndex].students.length;
-          studentIndex++
-        ) {
+        for (studentIndex = 0; studentIndex < jsonSubj.subjectList[i].grade[gradesIndex].students.length; studentIndex++) {
           //recupération des données de l'étudiants 1
-          if (
-            jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex]
-              .idStudent === 1
-          ) {
-            const numberStudentGrade =
-              jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex]
-                .note;
+          if (jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex].idStudent === 1) {
+            const numberStudentGrade = jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex].note;
 
             //Nombre total de notes
             numberGrades++;
@@ -86,19 +71,11 @@ fetch("../../json/subjectList.json")
     document.getElementById("average").value = averageGrade;
     document.getElementById("gradesNumber").innerHTML = numberGrades;
 
-    document.getElementById("highestGrade").innerHTML = getStudentHighestGrade(
-      1,
-      jsonSubj
-    );
-    document.getElementById("lowestGrade").innerHTML = getStudentLowestGrade(
-      1,
-      jsonSubj
-    );
+    document.getElementById("highestGrade").innerHTML = getStudentHighestGrade(1, jsonSubj);
+    document.getElementById("lowestGrade").innerHTML = getStudentLowestGrade(1, jsonSubj);
 
     for (let i = 0; i < myBtnOpenModal.length; i++) {
-      myBtnOpenModal[i].addEventListener("click", () =>
-        sendCourseNameModal(i, jsonSubj)
-      );
+      myBtnOpenModal[i].addEventListener("click", () => sendCourseNameModal(i, jsonSubj));
     }
     //---------------------------------------------------//
   })
@@ -133,29 +110,18 @@ function getStudentLowestGrade(studentId, jsonSubj) {
   return Math.min(...studentGrades);
 }
 
-function computeCourseAverage(courseName, jsonSubj) {
+function computeCourseAverage(courseName) {
   let numberGradesCourses = 0;
   let sumofAllGradesCourses = 0;
   let numberStudentsGrade = 0;
   let averageGrade = null;
-  for (let i = 0; i < jsonSubj.subjectList.length; i++) {
+  for (let i = 0; i < subjectList.length; i++) {
     //boucle sur le devoir
-    for (
-      let gradesIndex = 0;
-      gradesIndex < jsonSubj.subjectList[i].grade.length;
-      gradesIndex++
-    ) {
+    for (let gradesIndex = 0; gradesIndex < subjectList[i].grade.length; gradesIndex++) {
       //boucle sur les étudiants
-      for (
-        let studentIndex = 0;
-        studentIndex <
-        jsonSubj.subjectList[i].grade[gradesIndex].students.length;
-        studentIndex++
-      ) {
-        if (jsonSubj.subjectList[i].course === courseName) {
-          numberStudentsGrade =
-            jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex]
-              .note;
+      for (let studentIndex = 0; studentIndex < subjectList[i].grade[gradesIndex].students.length; studentIndex++) {
+        if (subjectList[i].course === courseName) {
+          numberStudentsGrade = subjectList[i].grade[gradesIndex].students[studentIndex].note;
           numberGradesCourses++;
 
           //Moyenne générale toutes matières confondues
@@ -164,9 +130,7 @@ function computeCourseAverage(courseName, jsonSubj) {
       }
     }
   }
-  averageGrade = parseFloat(
-    sumofAllGradesCourses / numberGradesCourses
-  ).toFixed(1);
+  averageGrade = parseFloat(sumofAllGradesCourses / numberGradesCourses).toFixed(1);
   document.getElementById("mediumGradeModal").innerHTML = averageGrade;
 
   // renvoie le tableau
@@ -179,26 +143,11 @@ function computeStudentAverage(courseName, jsonSubj) {
   let studentAverageGrade = 0;
   for (let i = 0; i < jsonSubj.subjectList.length; i++) {
     //boucle sur le devoir
-    for (
-      let gradesIndex = 0;
-      gradesIndex < jsonSubj.subjectList[i].grade.length;
-      gradesIndex++
-    ) {
+    for (let gradesIndex = 0; gradesIndex < jsonSubj.subjectList[i].grade.length; gradesIndex++) {
       //boucle sur les étudiants
-      for (
-        let studentIndex = 0;
-        studentIndex <
-        jsonSubj.subjectList[i].grade[gradesIndex].students.length;
-        studentIndex++
-      ) {
-        if (
-          jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex]
-            .idStudent === 1 &&
-          jsonSubj.subjectList[i].course === courseName
-        ) {
-          const numberStudentsGrade =
-            jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex]
-              .note;
+      for (let studentIndex = 0; studentIndex < jsonSubj.subjectList[i].grade[gradesIndex].students.length; studentIndex++) {
+        if (jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex].idStudent === 1 && jsonSubj.subjectList[i].course === courseName) {
+          const numberStudentsGrade = jsonSubj.subjectList[i].grade[gradesIndex].students[studentIndex].note;
           numberGradesCourses++;
 
           sumofAllGradesCourses += numberStudentsGrade;
@@ -206,12 +155,9 @@ function computeStudentAverage(courseName, jsonSubj) {
       }
     }
   }
-  studentAverageGrade = parseFloat(
-    sumofAllGradesCourses / numberGradesCourses
-  ).toFixed(1);
+  studentAverageGrade = parseFloat(sumofAllGradesCourses / numberGradesCourses).toFixed(1);
 
-  document.getElementById("MediumStudentGradeModalCourse").innerHTML =
-    studentAverageGrade;
+  document.getElementById("MediumStudentGradeModalCourse").innerHTML = studentAverageGrade;
 
   return [studentAverageGrade];
 }
@@ -221,25 +167,11 @@ function sendStudentGrade(courseName, dateGrade) {
   let studentGrade = 0;
   for (let i = 0; i < subjectList.length; i++) {
     //boucle sur le devoir
-    for (
-      let gradesIndex = 0;
-      gradesIndex < subjectList[i].grade.length;
-      gradesIndex++
-    ) {
+    for (let gradesIndex = 0; gradesIndex < subjectList[i].grade.length; gradesIndex++) {
       //boucle sur les étudiants
-      for (
-        let studentIndex = 0;
-        studentIndex < subjectList[i].grade[gradesIndex].students.length;
-        studentIndex++
-      ) {
-        if (
-          subjectList[i].grade[gradesIndex].students[studentIndex].idStudent ===
-            1 &&
-          subjectList[i].course === courseName &&
-          subjectList[i].grade[gradesIndex].date == dateGrade
-        ) {
-          studentGrade =
-            subjectList[i].grade[gradesIndex].students[studentIndex].note;
+      for (let studentIndex = 0; studentIndex < subjectList[i].grade[gradesIndex].students.length; studentIndex++) {
+        if (subjectList[i].grade[gradesIndex].students[studentIndex].idStudent === 1 && subjectList[i].course === courseName && subjectList[i].grade[gradesIndex].date == dateGrade) {
+          studentGrade = subjectList[i].grade[gradesIndex].students[studentIndex].note;
         }
       }
     }
@@ -250,23 +182,16 @@ function sendStudentGrade(courseName, dateGrade) {
 function getDetailsClassGrade(courseName, date) {
   for (i = 0; i < subjectList.length; i++) {
     if (subjectList[i].course === courseName) {
-      for (
-        gradesIndex = 0;
-        gradesIndex < subjectList[i].grade.length;
-        gradesIndex++
-      ) {
+      for (gradesIndex = 0; gradesIndex < subjectList[i].grade.length; gradesIndex++) {
         const gradeDate = subjectList[i].grade[gradesIndex].date;
         if (gradeDate === date) {
           sendStudentGrade(courseName, gradeDate);
 
-          document.getElementById("typeOfGradeModal3").innerHTML =
-            subjectList[i].grade[gradesIndex].type;
+          document.getElementById("typeOfGradeModal3").innerHTML = subjectList[i].grade[gradesIndex].type;
 
-          document.getElementById("coefGradeModal").innerHTML =
-            subjectList[i].grade[gradesIndex].coef;
+          document.getElementById("coefGradeModal").innerHTML = subjectList[i].grade[gradesIndex].coef;
           const classAverageGrade = getClassAverageGrade(courseName, gradeDate);
-          document.getElementById("avererageClassModal").innerHTML =
-            classAverageGrade;
+          document.getElementById("avererageClassModal").innerHTML = classAverageGrade;
 
           const highestGrade = getHighestGrade(courseName, gradeDate);
           document.getElementById("highestGradeModal").innerHTML = highestGrade;
@@ -288,24 +213,12 @@ function getClassAverageGrade(courseName, dateGrade) {
   let numberGrades = 0;
   for (i = 0; i < subjectList.length; i++) {
     //boucle sur le devoir
-    for (
-      gradesIndex = 0;
-      gradesIndex < subjectList[i].grade.length;
-      gradesIndex++
-    ) {
+    for (gradesIndex = 0; gradesIndex < subjectList[i].grade.length; gradesIndex++) {
       //boucle sur les étudiants
-      for (
-        studentIndex = 0;
-        studentIndex < subjectList[i].grade[gradesIndex].students.length;
-        studentIndex++
-      ) {
-        if (
-          subjectList[i].course === courseName &&
-          subjectList[i].grade[gradesIndex].date == dateGrade
-        ) {
+      for (studentIndex = 0; studentIndex < subjectList[i].grade[gradesIndex].students.length; studentIndex++) {
+        if (subjectList[i].course === courseName && subjectList[i].grade[gradesIndex].date == dateGrade) {
           {
-            studentGrade =
-              subjectList[i].grade[gradesIndex].students[studentIndex].note;
+            studentGrade = subjectList[i].grade[gradesIndex].students[studentIndex].note;
             numberGrades++;
             sumOfAllStudentsGrades = sumOfAllStudentsGrades + studentGrade;
           }
@@ -313,9 +226,7 @@ function getClassAverageGrade(courseName, dateGrade) {
       }
     }
   }
-  const averageGrade = parseFloat(
-    sumOfAllStudentsGrades / numberGrades
-  ).toFixed(1);
+  const averageGrade = parseFloat(sumOfAllStudentsGrades / numberGrades).toFixed(1);
 
   return averageGrade;
 }
@@ -325,23 +236,11 @@ function getHighestGrade(courseName, dateGrade) {
   let highestGrade = null;
   for (i = 0; i < subjectList.length; i++) {
     //boucle sur le devoir
-    for (
-      gradesIndex = 0;
-      gradesIndex < subjectList[i].grade.length;
-      gradesIndex++
-    ) {
+    for (gradesIndex = 0; gradesIndex < subjectList[i].grade.length; gradesIndex++) {
       //boucle sur les étudiants
-      for (
-        studentIndex = 0;
-        studentIndex < subjectList[i].grade[gradesIndex].students.length;
-        studentIndex++
-      ) {
-        if (
-          subjectList[i].course === courseName &&
-          subjectList[i].grade[gradesIndex].date == dateGrade
-        ) {
-          let currentGrade =
-            subjectList[i].grade[gradesIndex].students[studentIndex].note;
+      for (studentIndex = 0; studentIndex < subjectList[i].grade[gradesIndex].students.length; studentIndex++) {
+        if (subjectList[i].course === courseName && subjectList[i].grade[gradesIndex].date == dateGrade) {
+          let currentGrade = subjectList[i].grade[gradesIndex].students[studentIndex].note;
 
           if (highestGrade == null || highestGrade < currentGrade) {
             highestGrade = currentGrade;
@@ -358,23 +257,11 @@ function getLowestGrade(courseName, dateGrade) {
   let currentGrade = 0;
   for (i = 0; i < subjectList.length; i++) {
     //boucle sur le devoir
-    for (
-      gradesIndex = 0;
-      gradesIndex < subjectList[i].grade.length;
-      gradesIndex++
-    ) {
+    for (gradesIndex = 0; gradesIndex < subjectList[i].grade.length; gradesIndex++) {
       //boucle sur les étudiants
-      for (
-        studentIndex = 0;
-        studentIndex < subjectList[i].grade[gradesIndex].students.length;
-        studentIndex++
-      ) {
-        if (
-          subjectList[i].course === courseName &&
-          subjectList[i].grade[gradesIndex].date == dateGrade
-        ) {
-          currentGrade =
-            subjectList[i].grade[gradesIndex].students[studentIndex].note;
+      for (studentIndex = 0; studentIndex < subjectList[i].grade[gradesIndex].students.length; studentIndex++) {
+        if (subjectList[i].course === courseName && subjectList[i].grade[gradesIndex].date == dateGrade) {
+          currentGrade = subjectList[i].grade[gradesIndex].students[studentIndex].note;
 
           if (lowestGrade == null || lowestGrade > currentGrade) {
             lowestGrade = currentGrade;
@@ -388,21 +275,23 @@ function getLowestGrade(courseName, dateGrade) {
 
 function sendCourseNameModal(i, jsonSubj) {
   const courseName = jsonSubj.subjectList[i].course;
-  computeCourseAverage(courseName, jsonSubj);
+  computeCourseAverage(courseName);
   computeStudentAverage(courseName, jsonSubj);
   document.getElementById("CourseNameModal").innerHTML = courseName;
   generateCourseAverageGraph(courseName, jsonSubj);
 }
 
-// function getCourseNames(jsonSubj) {
-//   let getCourses = [];
-//   for (i = 0; i < jsonSubj.subjectList.length; i++) {
-//     getCourses.push(jsonSubj.subjectList[i].course);
-//   }
-//   return getCourses;
-// }
+function getCourseNames() {
+  let getCourses = [];
+  for (i = 0; i < subjectList.length; i++) {
+    getCourses.push(subjectList[i].course);
+  }
+  return getCourses;
+}
 
-function getAverageCourses(courseNames, jsonSubj) {
+function getAverageCourses() {
+  console.log("toto");
+  const courseNames = getCourseNames();
   const canvas = document.getElementById("barCanvas").getContext("2d");
   new Chart(canvas, {
     type: "bar",
@@ -410,21 +299,21 @@ function getAverageCourses(courseNames, jsonSubj) {
       datasets: [
         {
           label: courseNames[0],
-          data: [computeCourseAverage(courseNames[0], jsonSubj)],
+          data: [computeCourseAverage(courseNames[0])],
           backgroundColor: "rgba(75, 192, 192, 0.2)",
           borderColor: "rgba(75, 192, 192, 1)",
           borderWidth: 1,
         },
         {
           label: courseNames[1],
-          data: [computeCourseAverage(courseNames[1], jsonSubj)],
+          data: [computeCourseAverage(courseNames[1])],
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",
           borderWidth: 1,
         },
         {
           label: courseNames[2],
-          data: [computeCourseAverage(courseNames[2], jsonSubj)],
+          data: [computeCourseAverage(courseNames[2])],
           backgroundColor: "rgba(43, 84, 12, 0.2)",
           borderColor: "rgba(43, 84, 12, 1)",
           borderWidth: 1,
@@ -457,11 +346,7 @@ function getAverageCourses(courseNames, jsonSubj) {
 function getDateGrade(jsonSubj) {
   let getAverageClass = [];
   for (i = 0; i < jsonSubj.subjectList.length; i++) {
-    for (
-      gradesIndex = 0;
-      gradesIndex < jsonSubj.subjectList[i].grade.length;
-      gradesIndex++
-    ) {
+    for (gradesIndex = 0; gradesIndex < jsonSubj.subjectList[i].grade.length; gradesIndex++) {
       getAverageClass.push(jsonSubj.subjectList[i].grade[gradesIndex].date);
     }
   }
@@ -473,11 +358,7 @@ function generateCourseAverageGraph(courseName, jsonSubj) {
   for (subject of jsonSubj.subjectList) {
     if (subject.course === courseName) {
       for (grade of subject.grade) {
-        const averageGrade = getClassAverageGrade(
-          courseName,
-          grade.date,
-          jsonSubj
-        );
+        const averageGrade = getClassAverageGrade(courseName, grade.date, jsonSubj);
         const dataset = {
           label: grade.date,
           data: [averageGrade],
@@ -502,9 +383,7 @@ function generateCourseAverageGraph(courseName, jsonSubj) {
     datasets.push(dataset2);
   }
 
-  const graph = document
-    .getElementById("studentAverageCanvas")
-    .getContext("2d");
+  const graph = document.getElementById("studentAverageCanvas").getContext("2d");
 
   new Chart(graph, {
     type: "bar",
