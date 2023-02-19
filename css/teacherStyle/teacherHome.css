@@ -90,7 +90,6 @@ th {
 
     #subject {
       font-size: 42px;
-      
     }
 
     #divSelects {
@@ -112,10 +111,16 @@ th {
       text-align: center;
     }
 
+
     #quarters:hover {
       cursor: pointer;
+      background-color: #ffa083;
     }
 
+    #quarters:active {
+      background-color: #ffb59f;
+    }
+    
     #rating {
       margin: 2vh;
       margin-top: 1vh;
@@ -127,9 +132,14 @@ th {
       border: none;
       border-radius: 50px;
     }
-
+    
     #rating:hover {
+      background-color: #84d19e;
       cursor: pointer;
+    }
+
+    #rating:active {
+      background-color: #81c698;
     }
 
 #bottomInfo {
@@ -144,8 +154,9 @@ th {
 }
 
 #tabNotes {
-  height: 55vh;
+  height: 45vh;
   width: 90vw;
+  max-width: 900px;
   overflow-y: scroll;
 }
 
@@ -174,6 +185,15 @@ th {
   max-height: 5vh;
 }
 
+#buttonModify:hover {
+  cursor: pointer;
+  background-color: #ffa083;
+}
+
+#buttonModify:active {
+  background-color: #ffb59f;
+}
+
 #buttonAddRating {
   font-size: 17px;
   padding: 1.3vh 30px;
@@ -183,6 +203,16 @@ th {
   border-radius: 50px;
   max-height: 5vh;
 }
+
+#buttonAddRating:hover {
+  cursor: pointer;
+  background-color: #7dc695;
+}
+
+#buttonAddRating:active {
+  background-color: #86d3a0;
+}
+
 
 #divAverage {
   display: flex;

@@ -12,10 +12,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
   </head>
 
   <body>
@@ -27,17 +24,8 @@
         </div>
 
         <div class="secondPart">
-          <i
-            class="bi bi-bar-chart-line"
-            id="graph"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModalCenter"
-          ></i>
-          <input
-            id="signout"
-            type="image"
-            src="../../assets/img/sign-out.png"
-          />
+          <i class="bi bi-bar-chart-line" onclick="getAverageCourses()" id="graph" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"></i>
+          <input id="signout" type="image" src="../../assets/img/sign-out.png" />
         </div>
       </nav>
     </header>
@@ -94,23 +82,12 @@
     </footer>
 
     <!--   .............................MODAL GRAPH -->
-    <div
-      class="modal fade"
-      id="exampleModalCenter"
-      tabindex="-1"
-      aria-labelledby="exampleModalCenter"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenter" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title fs-5" id="exampleModalCenter">Graphique</h4>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <canvas id="barCanvas" aria-label="chart"></canvas>
@@ -120,23 +97,12 @@
     </div>
 
     <!-- Modal matieres -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title fs-5" id="CourseNameModal"></h4>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div id="mediumClassModal">
@@ -165,23 +131,12 @@
     </div>
 
     <!-- Modal Date -->
-    <div
-      class="modal fade"
-      id="exampleModalGrade"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="exampleModalGrade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title fs-5" id="titleModalDateGrade"></h4>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-bodyDate">
             <div class="titleStudentGradeModal1">
@@ -247,5 +202,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../../js/student/student.js"></script>
+    <!-- <script src="../../js/student/studentv2.js"></script> -->
   </body>
 </html>

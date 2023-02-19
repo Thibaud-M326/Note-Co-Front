@@ -19,8 +19,8 @@
         </div>
         <div id="secondPart">
           <!-- <a id="graph" href="">Graphique</a> -->
-          <button id="graph">Graphique</button>
-          <input id="signout" type="image" src="../../assets/img/sign-out.png"/>
+          <!-- <button id="graph">Graphique</button>
+          <input id="signout" type="image" src="../../assets/img/sign-out.png"/> -->
         </div>
       </nav>
     </header>
@@ -76,7 +76,7 @@
 
         <div id="containerBottom">
           <div id="divButton">
-            <button id="buttonModify"><a href="../teacherPage/teacherChangeNote.html">Modifier</a></button>
+            <button id="buttonModify" onclick="sendGradeValue()">Modifier</a></button>
             <button id="buttonAddRating"><a href="../teacherPage/teacherAddNote.html">Ajouter un devoir</a></button>
           </div>
         </div>
@@ -170,6 +170,14 @@
       </div>
     </footer>
   </body>
+
+
+
+    
+  <script>
+    console.log(window.location.href);
+  </script>
+
 
   <script src="../../js/teacher/teacherHome.js"></script>
 
