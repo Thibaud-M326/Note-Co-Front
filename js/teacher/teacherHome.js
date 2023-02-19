@@ -35,8 +35,11 @@ fetch('../../json/subjectList.json')
       .then(jsonStudents => {
 
         //----------------------------------------------------//
-        const studentList = jsonSubj.subjectList[0].grade[0].students.length;
-        console.log(studentList);
+      
+        console.log(jsonSubj)
+
+        let studentList = jsonSubj.subjectList[0].grade[0].students.length;
+        
 
 
         //affichage du tableau au chargement de la page 
@@ -67,8 +70,9 @@ fetch('../../json/subjectList.json')
 
         //ajout du choix du devoirs (ecrit  -  date)
 
+        console.log(jsonSubj.subjectList[0].grade.length);
 
-        for (let i = 0; i < jsonSubj.subjectList.length; i++) {
+        for (let i = 0; i < jsonSubj.subjectList[0].grade.length; i++) {
           ratingInsert +=
             `
           <option value="${i}" class="dateAndType">${jsonSubj.subjectList[0].grade[i].type} - ${jsonSubj.subjectList[0].grade[i].date}</option>
@@ -77,7 +81,7 @@ fetch('../../json/subjectList.json')
 
         rating.innerHTML = ratingInsert;
 
-        for (let i = 0; i < jsonSubj.subjectList.length; i++) {
+        for (let i = 0; i < jsonSubj.subjectList[0].grade.length; i++) {
           dateAndType[i].addEventListener("click", () => changeNoteList(jsonStudents, jsonSubj));
         }
 
@@ -97,7 +101,7 @@ fetch('../../json/subjectList.json')
 
         subject.innerHTML = jsonSubj.subjectList[0].course;
 
-        howmanyStudents.innerHTML = studentList + " élèves";
+        howmanyStudents.innerHTML = "devoir coefficient " + jsonSubj.subjectList[0].grade[0].coef;
         //---------------------------------------------------//
 
       })
@@ -132,6 +136,9 @@ function changeNoteList(jsonStudents, jsonSubj) {
   average = (sum / studentList);
   classAverageNote.innerHTML = parseInt(average);
   tbody.innerHTML = tab;
+  
+  howmanyStudents.innerHTML = "";
+  howmanyStudents.innerHTML = "devoir coefficient " + jsonSubj.subjectList[0].grade[valueSelected].coef ;
 }
 
 
@@ -151,7 +158,7 @@ function showModal(i, jsonSubj, jsonStudents) {
   sum = 0;
   average = 0;
   for (let index = 0; index < jsonSubj.subjectList[0].grade.length; index++) {
-    sum += jsonSubj.subjectList[0].grade[index].students[i].note;
+    sum += parseInt(jsonSubj.subjectList[0].grade[index].students[i].note);
   }
   average = (sum / jsonSubj.subjectList[0].grade.length);
   averageAllNotes.innerHTML = parseFloat(average).toFixed(1);
@@ -162,7 +169,7 @@ function showModal(i, jsonSubj, jsonStudents) {
   let coef = 0;
   console.log(writtenNotes);
   console.log(writtenNotes[0].students[0].note);
-  console.log(writtenNotes[1].students[0].note);
+  // console.log(writtenNotes[1].students[0].note);
   sum = 0;
   average = 0;
   for (let index = 0; index < writtenNotes.length; index++) {
