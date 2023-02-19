@@ -1,1 +1,304 @@
-{"subjectList":[{"id":1,"coef":2,"course":"Anglais","grade":[{"type":"ecrit","date":"2024-10-24","coef":"12","students":[{"idStudent":1,"note":"0"},{"idStudent":2,"note":"20"},{"idStudent":3,"note":"0"},{"idStudent":4,"note":"20"},{"idStudent":5,"note":"0"},{"idStudent":6,"note":"20"}]},{"type":"oral","date":"2020-09-13","coef":"2","students":[{"idStudent":1,"note":"6"},{"idStudent":2,"note":"20"},{"idStudent":3,"note":"4"},{"idStudent":4,"note":"14"},{"idStudent":5,"note":"14"},{"idStudent":6,"note":"10"}]},{"type":"ecrit","date":"2020-09-18","coef":2,"students":[{"idStudent":1,"note":11},{"idStudent":2,"note":12},{"idStudent":3,"note":17},{"idStudent":4,"note":19},{"idStudent":5,"note":16},{"idStudent":6,"note":17}]}]},{"id":2,"coef":1,"course":"Histoire","grade":[{"type":"ecrit","date":"2020-09-02","coef":1,"students":[{"idStudent":1,"note":13},{"idStudent":2,"note":15},{"idStudent":3,"note":11},{"idStudent":4,"note":20},{"idStudent":5,"note":12},{"idStudent":6,"note":12}]},{"type":"oral","date":"2020-09-13","coef":2,"students":[{"idStudent":1,"note":15},{"idStudent":2,"note":14},{"idStudent":3,"note":2},{"idStudent":4,"note":17},{"idStudent":5,"note":18},{"idStudent":6,"note":12}]},{"type":"ecrit","date":"2020-09-18","coef":2,"students":[{"idStudent":1,"note":13},{"idStudent":2,"note":16},{"idStudent":3,"note":14},{"idStudent":4,"note":20},{"idStudent":5,"note":9},{"idStudent":6,"note":12}]}]},{"id":3,"coef":2,"course":"Math","grade":[{"type":"ecrit","date":"2020-09-02","coef":1,"students":[{"idStudent":1,"note":15},{"idStudent":2,"note":12},{"idStudent":3,"note":8},{"idStudent":4,"note":17},{"idStudent":5,"note":10},{"idStudent":6,"note":9}]},{"type":"oral","date":"2020-09-13","coef":3,"students":[{"idStudent":1,"note":11},{"idStudent":2,"note":17},{"idStudent":3,"note":1},{"idStudent":4,"note":18},{"idStudent":5,"note":18},{"idStudent":6,"note":15}]},{"type":"ecrit","date":"2020-09-18","coef":1,"students":[{"idStudent":1,"note":15},{"idStudent":2,"note":13},{"idStudent":3,"note":17},{"idStudent":4,"note":16},{"idStudent":5,"note":12},{"idStudent":6,"note":12}]}]}]}
+{
+    "subjectList": [
+        {
+            "id": 1,
+            "coef": 2,
+            "course": "Anglais",
+            "grade": [
+                {
+                    "type": "ecrit",
+                    "date": "2024-10-24",
+                    "coef": "1",
+                    "students": [
+                        {
+                            "idStudent": 1,
+                            "note": "0"
+                        },
+                        {
+                            "idStudent": 2,
+                            "note": "20"
+                        },
+                        {
+                            "idStudent": 3,
+                            "note": "0"
+                        },
+                        {
+                            "idStudent": 4,
+                            "note": "20"
+                        },
+                        {
+                            "idStudent": 5,
+                            "note": "0"
+                        },
+                        {
+                            "idStudent": 6,
+                            "note": "20"
+                        }
+                    ]
+                },
+                {
+                    "type": "oral",
+                    "date": "2020-09-13",
+                    "coef": "2",
+                    "students": [
+                        {
+                            "idStudent": 1,
+                            "note": "6"
+                        },
+                        {
+                            "idStudent": 2,
+                            "note": "20"
+                        },
+                        {
+                            "idStudent": 3,
+                            "note": "4"
+                        },
+                        {
+                            "idStudent": 4,
+                            "note": "14"
+                        },
+                        {
+                            "idStudent": 5,
+                            "note": "14"
+                        },
+                        {
+                            "idStudent": 6,
+                            "note": "10"
+                        }
+                    ]
+                },
+                {
+                    "type": "ecrit",
+                    "date": "2020-09-18",
+                    "coef": 2,
+                    "students": [
+                        {
+                            "idStudent": 1,
+                            "note": 11
+                        },
+                        {
+                            "idStudent": 2,
+                            "note": 12
+                        },
+                        {
+                            "idStudent": 3,
+                            "note": 17
+                        },
+                        {
+                            "idStudent": 4,
+                            "note": 19
+                        },
+                        {
+                            "idStudent": 5,
+                            "note": 16
+                        },
+                        {
+                            "idStudent": 6,
+                            "note": 17
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "coef": 1,
+            "course": "Histoire",
+            "grade": [
+                {
+                    "type": "ecrit",
+                    "date": "2020-09-02",
+                    "coef": 1,
+                    "students": [
+                        {
+                            "idStudent": 1,
+                            "note": 13
+                        },
+                        {
+                            "idStudent": 2,
+                            "note": 15
+                        },
+                        {
+                            "idStudent": 3,
+                            "note": 11
+                        },
+                        {
+                            "idStudent": 4,
+                            "note": 20
+                        },
+                        {
+                            "idStudent": 5,
+                            "note": 12
+                        },
+                        {
+                            "idStudent": 6,
+                            "note": 12
+                        }
+                    ]
+                },
+                {
+                    "type": "oral",
+                    "date": "2020-09-13",
+                    "coef": 2,
+                    "students": [
+                        {
+                            "idStudent": 1,
+                            "note": 15
+                        },
+                        {
+                            "idStudent": 2,
+                            "note": 14
+                        },
+                        {
+                            "idStudent": 3,
+                            "note": 2
+                        },
+                        {
+                            "idStudent": 4,
+                            "note": 17
+                        },
+                        {
+                            "idStudent": 5,
+                            "note": 18
+                        },
+                        {
+                            "idStudent": 6,
+                            "note": 12
+                        }
+                    ]
+                },
+                {
+                    "type": "ecrit",
+                    "date": "2020-09-18",
+                    "coef": 2,
+                    "students": [
+                        {
+                            "idStudent": 1,
+                            "note": 13
+                        },
+                        {
+                            "idStudent": 2,
+                            "note": 16
+                        },
+                        {
+                            "idStudent": 3,
+                            "note": 14
+                        },
+                        {
+                            "idStudent": 4,
+                            "note": 20
+                        },
+                        {
+                            "idStudent": 5,
+                            "note": 9
+                        },
+                        {
+                            "idStudent": 6,
+                            "note": 12
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "coef": 2,
+            "course": "Math",
+            "grade": [
+                {
+                    "type": "ecrit",
+                    "date": "2020-09-02",
+                    "coef": 1,
+                    "students": [
+                        {
+                            "idStudent": 1,
+                            "note": 15
+                        },
+                        {
+                            "idStudent": 2,
+                            "note": 12
+                        },
+                        {
+                            "idStudent": 3,
+                            "note": 8
+                        },
+                        {
+                            "idStudent": 4,
+                            "note": 17
+                        },
+                        {
+                            "idStudent": 5,
+                            "note": 10
+                        },
+                        {
+                            "idStudent": 6,
+                            "note": 9
+                        }
+                    ]
+                },
+                {
+                    "type": "oral",
+                    "date": "2020-09-13",
+                    "coef": 3,
+                    "students": [
+                        {
+                            "idStudent": 1,
+                            "note": 11
+                        },
+                        {
+                            "idStudent": 2,
+                            "note": 17
+                        },
+                        {
+                            "idStudent": 3,
+                            "note": 1
+                        },
+                        {
+                            "idStudent": 4,
+                            "note": 18
+                        },
+                        {
+                            "idStudent": 5,
+                            "note": 18
+                        },
+                        {
+                            "idStudent": 6,
+                            "note": 15
+                        }
+                    ]
+                },
+                {
+                    "type": "ecrit",
+                    "date": "2020-09-18",
+                    "coef": 1,
+                    "students": [
+                        {
+                            "idStudent": 1,
+                            "note": 15
+                        },
+                        {
+                            "idStudent": 2,
+                            "note": 13
+                        },
+                        {
+                            "idStudent": 3,
+                            "note": 17
+                        },
+                        {
+                            "idStudent": 4,
+                            "note": 16
+                        },
+                        {
+                            "idStudent": 5,
+                            "note": 12
+                        },
+                        {
+                            "idStudent": 6,
+                            "note": 12
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

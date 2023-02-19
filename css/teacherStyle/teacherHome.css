@@ -90,7 +90,6 @@ th {
 
     #subject {
       font-size: 42px;
-      
     }
 
     #divSelects {
@@ -157,6 +156,7 @@ th {
 #tabNotes {
   height: 45vh;
   width: 90vw;
+  max-width: 900px;
   overflow-y: scroll;
 }
 
