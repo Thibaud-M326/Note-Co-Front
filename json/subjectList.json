@@ -12,7 +12,7 @@
                     "students": [
                         {
                             "idStudent": 1,
-                            "note": "0"
+                            "note": "20"
                         },
                         {
                             "idStudent": 2,
@@ -20,7 +20,7 @@
                         },
                         {
                             "idStudent": 3,
-                            "note": "0"
+                            "note": "16.5"
                         },
                         {
                             "idStudent": 4,
@@ -38,12 +38,12 @@
                 },
                 {
                     "type": "oral",
-                    "date": "2020-09-13",
-                    "coef": "2",
+                    "date": "2021-10-12",
+                    "coef": "1",
                     "students": [
                         {
                             "idStudent": 1,
-                            "note": "6"
+                            "note": "20"
                         },
                         {
                             "idStudent": 2,
@@ -51,7 +51,7 @@
                         },
                         {
                             "idStudent": 3,
-                            "note": "4"
+                            "note": "13.50"
                         },
                         {
                             "idStudent": 4,

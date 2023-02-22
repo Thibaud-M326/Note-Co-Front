@@ -370,17 +370,6 @@ function generateCourseAverageGraph(courseName, jsonSubj) {
         datasets.push(dataset);
       }
     }
-    const dataset2 = {
-      label: "toto",
-      data: [10],
-      backgroundColor: "rgba(75, 192, 192, 0.2)",
-      borderColor: "rgba(75, 192, 192, 1)",
-      borderWidth: 1,
-      type: "line",
-      order: 0,
-    };
-
-    datasets.push(dataset2);
   }
 
   const graph = document.getElementById("studentAverageCanvas").getContext("2d");
